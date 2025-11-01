@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0aa3f8735d5b62443a3b31d5674d33ea, type: 3}
+  m_Name: TestModuleCard
+  m_EditorClassIdentifier: Assembly-CSharp::Card
+  cardName: Module
+  cardSprite: {fileID: 4315214628464698562, guid: feba25532896a6b409dbc2b1898188f8, type: 3}
+  health: 0
+  damage: 0
+  cardType: 1
+  damageType: 
+  moduleModel: {fileID: 2440941003837750162, guid: 44a6de557bb6ebf438a1e6feddcedf6c, type: 3}
