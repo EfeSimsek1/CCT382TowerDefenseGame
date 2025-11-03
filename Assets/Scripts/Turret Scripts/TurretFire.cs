@@ -52,7 +52,6 @@ public class TurretFire : MonoBehaviour
             // For more details you can see: https://youtu.be/fsDE_mO4RZM or if using Unity 2021+: https://youtu.be/zyzqA_CPz2E
 
             //Animator.SetBool("IsShooting", true);
-            //ShootingSystem.gameObject.SetActive(true);
             if (ShootingSystem.isStopped)
             {
                 ShootingSystem.Play();
