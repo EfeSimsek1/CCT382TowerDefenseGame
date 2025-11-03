@@ -253,7 +253,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gun
   AddBulletSpread: 0
-  BulletSpreadVariance: {x: 0.1, y: 0.1, z: 0.1}
+  BulletSpreadVariance: {x: 0, y: 0, z: 0}
   ShootingSystem: {fileID: 4206855842851552183}
   BulletSpawnPoint: {fileID: 4084416595811486457}
   ImpactParticleSystem: {fileID: 7934396087084966990, guid: cff6ec26c2ce2344db1b02fbb11501ed, type: 3}

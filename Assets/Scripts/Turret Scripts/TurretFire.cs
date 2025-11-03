@@ -5,7 +5,7 @@ using UnityEngine;
 public class TurretFire : MonoBehaviour
 {
     [SerializeField]
-    private bool AddBulletSpread = true;
+    private bool AddBulletSpread = false;
     [SerializeField]
     private Vector3 BulletSpreadVariance = new Vector3(0.1f, 0.1f, 0.1f);
     [SerializeField]
@@ -36,7 +36,7 @@ public class TurretFire : MonoBehaviour
 
     private void Update()
     {
-        if (GetComponent<TurretAim>().target != null && LastShootTime + ShootDelay < Time.time)
+        if (GetComponentInParent<TurretAim>().target != null && LastShootTime + ShootDelay < Time.time)
         {
             Shoot();
         }
