@@ -8,7 +8,6 @@ using Random = UnityEngine.Random;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject[] enemyPrefabs;
     [SerializeField] private WaveInfo[] waves;
 
     [Header("Attributes")]
