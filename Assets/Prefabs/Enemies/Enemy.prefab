@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3667041100264951072}
   - component: {fileID: 2526833378465085862}
   - component: {fileID: 8631682230010828040}
+  - component: {fileID: 7775997107955014424}
   m_Layer: 3
   m_Name: Enemy
   m_TagString: Untagged
@@ -175,3 +176,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c499fc9f507476443aace8b36d830c4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
+  damageOnDeath: 10
+  speed: 2
+--- !u!114 &7775997107955014424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6864183603021173478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7c5d93aa511614caff74cbbed65c37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
+  maxHealth: 15
+  damageWeaknesses: 

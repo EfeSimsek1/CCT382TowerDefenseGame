@@ -1,9 +1,12 @@
 using System.Collections;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
 public class TurretFire : MonoBehaviour
 {
+    [Header("Firing attributes")]
+
     [SerializeField]
     private bool AddBulletSpread = false;
     [SerializeField]
@@ -22,6 +25,12 @@ public class TurretFire : MonoBehaviour
     private LayerMask Mask;
     [SerializeField]
     private float BulletSpeed = 100;
+
+    [Header("Damage attributes")]
+    [SerializeField]
+    private int damage;
+    [SerializeField]
+    private Card.DamageType damageType;
 
     private Animator Animator;
     private float LastShootTime;
@@ -65,9 +74,12 @@ public class TurretFire : MonoBehaviour
 
                 StartCoroutine(SpawnTrail(trail, hit.point, hit.normal, true, hit.collider.gameObject.transform));
 
+                EnemyHealth enemy = hit.collider.GetComponent<EnemyHealth>();
+                enemy.Damage(damage, damageType);
+
                 LastShootTime = Time.time;
             }
-            // this has been updated to fix a commonly reported problem that you cannot fire if you would not hit anything
+            // this has been updated to fix a problem where you cannot fire if you would not hit anything
             else
             {
                 TrailRenderer trail = Instantiate(BulletTrail, BulletSpawnPoint.position, Quaternion.identity);
@@ -99,8 +111,6 @@ public class TurretFire : MonoBehaviour
 
     private IEnumerator SpawnTrail(TrailRenderer Trail, Vector3 HitPoint, Vector3 HitNormal, bool MadeImpact, Transform objectHit)
     {
-        // This has been updated from the video implementation to fix a commonly raised issue about the bullet trails
-        // moving slowly when hitting something close, and not
         Vector3 startPosition = Trail.transform.position;
         float distance = Vector3.Distance(Trail.transform.position, HitPoint);
         float remainingDistance = distance;

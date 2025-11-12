@@ -188,6 +188,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   BulletSpeed: 100
+  damage: 1
+  damageType: 0
 --- !u!1001 &7041589944995897251
 PrefabInstance:
   m_ObjectHideFlags: 0

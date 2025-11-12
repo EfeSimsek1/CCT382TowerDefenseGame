@@ -263,6 +263,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   BulletSpeed: 100
+  damage: 1
+  damageType: 0
 --- !u!1 &4695378910917716754
 GameObject:
   m_ObjectHideFlags: 0

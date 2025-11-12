@@ -21,6 +21,10 @@ public class Card : ScriptableObject
 
     public enum DamageType
     {
-       
+        Kinetic,
+        Thermal,
+        Eletric,
+        Explosive,
+        Corrosive
     }
 }
