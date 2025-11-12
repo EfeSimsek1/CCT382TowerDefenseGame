@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -9,6 +10,8 @@ public class GameManager : MonoBehaviour
     [Header("References")]
     [SerializeField]
     private Slider healthBar;
+    [SerializeField]
+    private TextMeshProUGUI gameOverText;
 
     [Header("Attributes")]
     [SerializeField]
@@ -29,6 +32,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         currentPlayerHealth = maxPlayerHealth;
+        gameOverText.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -44,6 +48,9 @@ public class GameManager : MonoBehaviour
         if (currentPlayerHealth <= 0)
         {
             // TODO: Add functionality for player losing
+
+            // Remove this line after implementing game over menu
+            gameOverText.gameObject.SetActive(true);
         }
     }
 }

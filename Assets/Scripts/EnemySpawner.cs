@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -27,11 +28,13 @@ public class EnemySpawner : MonoBehaviour
 
     private void Start()
     {
-        StartWave();
+        StartCoroutine(StartWave());
     }
 
     void Update()
     {
+        if (!isSpawning) return;
+
         timeSinceLastSpawn += Time.deltaTime;
 
         if (timeSinceLastSpawn >= (1f / enemiesPerSecond) && enemiesLeftToSpawn > 0)
@@ -41,11 +44,26 @@ public class EnemySpawner : MonoBehaviour
             enemiesAlive++;
             timeSinceLastSpawn = 0;
         }
+
+        if (enemiesAlive == 0 && enemiesLeftToSpawn == 0)
+        {
+            EndWave();
+        }
     }
-    void StartWave()
+    private IEnumerator StartWave()
     {
+        yield return new WaitForSeconds(timeBetweenWaves);
         isSpawning = true;
+        timeSinceLastSpawn = 0;
         enemiesLeftToSpawn = EnemiesPerWave();
+    }
+
+    void EndWave()
+    {
+        isSpawning = false;
+        timeSinceLastSpawn = 0f;
+        currentWave++;
+        StartCoroutine(StartWave());
     }
 
     private void SpawnEnemy()
