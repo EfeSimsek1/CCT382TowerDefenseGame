@@ -50,7 +50,9 @@ public class PlotSelect : Interactable
     {
         base.OnMouseHoverObj();
 
-        if (CardInteractionManager.cardReleasedTrigger && CardInteractionManager.LastHeldCard.cardType == Card.CardType.Turret)
+        Card lastHeldCard = CardInteractionManager.LastHeldCard;
+
+        if (CardInteractionManager.cardReleasedTrigger && lastHeldCard.cardType == Card.CardType.Turret && CardInteractionManager.CanAffordCard(lastHeldCard))
         {
             Destroy(previewTurret);
             Instantiate(turretPrefab, bc.bounds.center + Vector3.up * (bc.bounds.extents.y + turretBC.bounds.extents.y), Quaternion.identity);

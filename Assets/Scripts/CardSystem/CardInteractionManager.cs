@@ -48,5 +48,11 @@ public class CardInteractionManager : MonoBehaviour
     {
         discardManager.AddToDiscard(card);
         handManager.DiscardCard(card);
+        GameManager.onLoseMoney.Invoke(card.cost);
+    }
+
+    public static bool CanAffordCard(Card card)
+    {
+        return GameManager.currentPlayerMoney >= card.cost;
     }
 }

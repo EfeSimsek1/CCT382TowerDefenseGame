@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Turret
   cardSprite: {fileID: 4315214628464698562, guid: feba25532896a6b409dbc2b1898188f8, type: 3}
+  cost: 1
   health: 0
   damage: 0
   cardType: 0
   damageType: 
+  moduleModel: {fileID: 0}

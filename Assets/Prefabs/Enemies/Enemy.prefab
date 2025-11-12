@@ -178,6 +178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
   damageOnDeath: 20
   speed: 2
+  moneyDroppedOnDeath: 1
 --- !u!114 &7775997107955014424
 MonoBehaviour:
   m_ObjectHideFlags: 0

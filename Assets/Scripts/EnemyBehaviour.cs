@@ -9,6 +9,8 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField]
     private float speed;
 
+    public int moneyDroppedOnDeath;
+
     private NavMeshAgent agent;
 
     void Start()
@@ -23,7 +25,7 @@ public class EnemyBehaviour : MonoBehaviour
 
         if (Vector3.Distance(transform.position, LevelManager.instance.endPoint.position) <= 0.1f)
         {
-            // Destroy enemy and innflict damage to the player
+            // Destroy enemy and inflict damage to the player
             Destroy(gameObject);
             EnemySpawner.onEnemyDestroy.Invoke();
             GameManager.onDamagePlayer.Invoke(damageOnDeath);

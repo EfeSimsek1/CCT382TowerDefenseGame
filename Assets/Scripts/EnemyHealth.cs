@@ -34,8 +34,9 @@ public class EnemyHealth : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            Destroy(gameObject);
             EnemySpawner.onEnemyDestroy.Invoke();
+            GameManager.onEnemyDefeated.Invoke(gameObject);
+            Destroy(gameObject);
         }
     }
 }

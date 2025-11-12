@@ -9,6 +9,7 @@ public class CardDisplay : MonoBehaviour
     public TMP_Text nameText;
     public TMP_Text healthText;
     public TMP_Text damageText;
+    public TMP_Text costText;
     public Image[] typeImages;
 
     void Start()  
@@ -21,5 +22,6 @@ public class CardDisplay : MonoBehaviour
         nameText.text = cardData.cardName;
         healthText.text = cardData.health.ToString();
         damageText.text = cardData.damage.ToString();
+        costText.text = cardData.cost.ToString();
     }
 }
