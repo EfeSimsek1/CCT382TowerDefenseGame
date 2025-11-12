@@ -74,8 +74,7 @@ public class TurretFire : MonoBehaviour
 
                 StartCoroutine(SpawnTrail(trail, hit.point, hit.normal, true, hit.collider.gameObject.transform));
 
-                EnemyHealth enemy = hit.collider.GetComponent<EnemyHealth>();
-                enemy.Damage(damage, damageType);
+                hit.collider.GetComponent<EnemyHealth>().Damage(damage, damageType);
 
                 LastShootTime = Time.time;
             }
