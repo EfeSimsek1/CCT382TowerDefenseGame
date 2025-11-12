@@ -66,7 +66,9 @@ public class TurretSelect : Interactable
     {
         base.OnMouseHoverObj();
 
-        if (CardInteractionManager.cardReleasedTrigger && CardInteractionManager.LastHeldCard.cardType == Card.CardType.Module && CardInteractionManager.LastHeldCard.moduleModel != null)
+        Card lastCard = CardInteractionManager.LastHeldCard;
+
+        if (CardInteractionManager.cardReleasedTrigger && lastCard.cardType == Card.CardType.Module && lastCard.moduleModel != null && CardInteractionManager.CanAffordCard(lastCard))
         {
             // Add module to turret, and add module model. Also destroy module preview
             Destroy(previewModule);
@@ -78,7 +80,7 @@ public class TurretSelect : Interactable
             CardInteractionManager.PlayCard(CardInteractionManager.LastHeldCard);
             CardInteractionManager.cardReleasedTrigger = false;
         }
-        else if (CardInteractionManager.cardReleasedTrigger && CardInteractionManager.LastHeldCard.cardType == Card.CardType.Module)
+        else if (CardInteractionManager.cardReleasedTrigger && lastCard.cardType == Card.CardType.Module && CardInteractionManager.CanAffordCard(lastCard))
         {
             // Add module to turret, but not the module model. Also destroy module preview
             Destroy(previewModule);

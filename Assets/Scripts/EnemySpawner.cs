@@ -89,7 +89,7 @@ public class EnemySpawner : MonoBehaviour
         
         Instantiate(prefabToSpawn, LevelManager.instance.startPoint.position, Quaternion.identity);
 
-        Debug.Log($"Spawned {prefabToSpawn.name}. {(enemiesLeftToSpawn.ContainsKey(prefabToSpawn) ? enemiesLeftToSpawn[prefabToSpawn] : 0)} remaining");
+        //Debug.Log($"Spawned {prefabToSpawn.name}. {(enemiesLeftToSpawn.ContainsKey(prefabToSpawn) ? enemiesLeftToSpawn[prefabToSpawn] : 0)} remaining");
     }
 
     private void SetEnemiesPerWave()
