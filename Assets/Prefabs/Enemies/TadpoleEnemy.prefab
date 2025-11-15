@@ -263,6 +263,8 @@ MonoBehaviour:
   damageOnDeath: 5
   speed: 3
   moneyDroppedOnDeath: 1
+  movementAudioClip: {fileID: 8300000, guid: abad098f484040045afa2f4cc61cad16, type: 3}
+  audioSource: {fileID: 0}
 --- !u!114 &7603713213826974662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,7 +279,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   maxHealth: 5
   damageWeaknesses: 
-  audioSource: {fileID: 0}
   deathClip: {fileID: 8300000, guid: be31997ce03f71b4e81c088ccc70614e, type: 3}
 --- !u!82 &8352802261071480051
 AudioSource:
