@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8631682230010828040}
   - component: {fileID: 7775997107955014424}
   m_Layer: 3
-  m_Name: Enemy
+  m_Name: Enemy 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71,7 +71,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 34092e8024d2d684593867b89886e579, type: 2}
+  - {fileID: 2100000, guid: a574bfca5b080eb44bf41fd69d7df95e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -178,7 +178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
   damageOnDeath: 20
   speed: 2
-  moneyDroppedOnDeath: 1
+  moneyDroppedOnDeath: 10
 --- !u!114 &7775997107955014424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,5 +191,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c7c5d93aa511614caff74cbbed65c37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
-  maxHealth: 5
+  maxHealth: 30
   damageWeaknesses: 

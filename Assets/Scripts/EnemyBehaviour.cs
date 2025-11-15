@@ -32,7 +32,7 @@ public class EnemyBehaviour : MonoBehaviour
         {
             // Destroy enemy and inflict damage to the player
             Destroy(gameObject);
-            EnemySpawner.onEnemyDestroy.Invoke();
+            EnemySpawner.onEnemyDestroy.Invoke(gameObject);
             GameManager.onDamagePlayer.Invoke(damageOnDeath);
         }
     }

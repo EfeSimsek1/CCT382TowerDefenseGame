@@ -5,6 +5,7 @@ public class EnemyHealth : MonoBehaviour
 {
     [Header("Attributes")]
     [SerializeField] private int maxHealth;
+    private bool killTrigger;
 
     [SerializeField] Card.DamageType[] damageWeaknesses;
 
@@ -14,11 +15,17 @@ public class EnemyHealth : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip deathClip;
 
-    void Start()
+    private void Awake()
     {
         currentHealth = maxHealth;
         audioSource = GetComponent<AudioSource>();
         behaviour = GetComponent<EnemyBehaviour>();
+        killTrigger = false;
+    }
+
+    void Start()
+    {
+
     }
 
     void Update()
@@ -38,7 +45,7 @@ public class EnemyHealth : MonoBehaviour
             currentHealth -= damage;
         }
 
-        if (currentHealth <= 0)
+        if (currentHealth <= 0 && !killTrigger)
         {
             Die();
         }
@@ -46,7 +53,8 @@ public class EnemyHealth : MonoBehaviour
     
     public void Die()
     {
-        EnemySpawner.onEnemyDestroy.Invoke();
+            killTrigger = true;
+        EnemySpawner.onEnemyDestroy.Invoke(gameObject);
         GameManager.onEnemyDefeated.Invoke(gameObject);
         audioSource.PlayOneShot(deathClip);
 
