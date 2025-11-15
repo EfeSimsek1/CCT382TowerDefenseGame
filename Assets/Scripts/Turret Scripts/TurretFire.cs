@@ -32,8 +32,13 @@ public class TurretFire : MonoBehaviour
     [SerializeField]
     private Card.DamageType damageType;
 
+    [Header("Audio")]
+    [SerializeField]
+    private AudioClip ShootingAudioClip;
+
     private Animator Animator;
     private float LastShootTime;
+    private AudioSource ShootingAudioSource;
 
     private void Awake()
     {
@@ -41,6 +46,13 @@ public class TurretFire : MonoBehaviour
         var main = ShootingSystem.main;
         main.playOnAwake = false;
         ShootingSystem.gameObject.SetActive(true);
+
+        // Use the AudioSource attached to the same GameObject
+        ShootingAudioSource = GetComponent<AudioSource>();
+        if (ShootingAudioSource == null)
+        {
+            Debug.LogWarning("No AudioSource found on Turret object. Shooting audio will not play.");
+        }
     }
 
     private void Update()
@@ -66,6 +78,9 @@ public class TurretFire : MonoBehaviour
                 ShootingSystem.Play();
             }
 
+            // play the shooting sound using the AudioSource attached to this GameObject
+            PlayShootingSound();
+
             Vector3 direction = GetDirection();
 
             if (Physics.Raycast(BulletSpawnPoint.position, direction, out RaycastHit hit, float.MaxValue, Mask))
@@ -87,6 +102,14 @@ public class TurretFire : MonoBehaviour
 
                 LastShootTime = Time.time;
             }
+        }
+    }
+
+    private void PlayShootingSound()
+    {
+        if (ShootingAudioSource != null && ShootingAudioClip != null)
+        {
+            ShootingAudioSource.PlayOneShot(ShootingAudioClip);
         }
     }
 
