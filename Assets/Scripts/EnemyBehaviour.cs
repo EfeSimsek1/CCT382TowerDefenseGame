@@ -13,6 +13,11 @@ public class EnemyBehaviour : MonoBehaviour
 
     private NavMeshAgent agent;
 
+    [SerializeField] private AudioClip movementAudioClip;
+    [SerializeField] private AudioSource audioSource;
+
+    private Coroutine playCoroutine;
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -29,6 +34,34 @@ public class EnemyBehaviour : MonoBehaviour
             Destroy(gameObject);
             EnemySpawner.onEnemyDestroy.Invoke(gameObject);
             GameManager.onDamagePlayer.Invoke(damageOnDeath);
+        }
+    }
+
+    private void Awake()
+    {
+        if (audioSource == null)
+            audioSource = GetComponent<AudioSource>() ?? gameObject.AddComponent<AudioSource>();
+        if (movementAudioClip != null)
+            playCoroutine = StartCoroutine(PlayRandomly());
+    }
+
+    private System.Collections.IEnumerator PlayRandomly()
+    {
+        while (true)
+        {
+            float delay = Random.Range(3f, 6f);
+            yield return new WaitForSeconds(delay);
+            if (movementAudioClip != null)
+                audioSource.PlayOneShot(movementAudioClip);
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (playCoroutine != null)
+        {
+            StopCoroutine(playCoroutine);
+            playCoroutine = null;
         }
     }
 
