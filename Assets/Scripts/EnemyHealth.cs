@@ -5,14 +5,21 @@ public class EnemyHealth : MonoBehaviour
 {
     [Header("Attributes")]
     [SerializeField] private int maxHealth;
+    private bool killTrigger;
 
     [SerializeField] Card.DamageType[] damageWeaknesses;
     
     private int currentHealth;
 
-    void Start()
+    private void Awake()
     {
         currentHealth = maxHealth;
+        killTrigger = false;
+    }
+
+    void Start()
+    {
+
     }
 
     void Update()
@@ -32,9 +39,10 @@ public class EnemyHealth : MonoBehaviour
             currentHealth -= damage;
         }
 
-        if (currentHealth <= 0)
+        if (currentHealth <= 0 && !killTrigger)
         {
-            EnemySpawner.onEnemyDestroy.Invoke();
+            killTrigger = true;
+            EnemySpawner.onEnemyDestroy.Invoke(gameObject);
             GameManager.onEnemyDefeated.Invoke(gameObject);
             Destroy(gameObject);
         }
