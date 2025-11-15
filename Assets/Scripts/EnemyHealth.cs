@@ -40,12 +40,7 @@ public class EnemyHealth : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            EnemySpawner.onEnemyDestroy.Invoke();
-            GameManager.onEnemyDefeated.Invoke(gameObject);
             Die();
-
-
-
         }
     }
     
