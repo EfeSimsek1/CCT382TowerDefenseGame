@@ -12,6 +12,7 @@ public class OverheatSystem : MonoBehaviour
     [SerializeField] private float heatLimit;
     [SerializeField] private Slider heatBar;
     [SerializeField] private float overHeatTime;
+    private bool isCooling;
 
     public UnityEvent<float> onOverHeat = new UnityEvent<float>();
 
@@ -21,6 +22,7 @@ public class OverheatSystem : MonoBehaviour
 
     private void Awake()
     {
+        isCooling = false;
         currentHeat = 0;
         tf = GetComponent<TurretFire>();
         ta = GetComponent<TurretAim>();
@@ -37,7 +39,26 @@ public class OverheatSystem : MonoBehaviour
 
     private void HeatUp()
     {
+        if (isCooling) return;
+
         currentHeat += heatPerShot;
+
+        if (currentHeat > heatLimit)
+        {
+            currentHeat = heatLimit;
+
+            // Overheat turret
+            tf.canFire = false;
+            ta.enabled = false;
+            StartCoroutine(Cooling());
+        }
+    }
+
+    public void HeatUp(float heat)
+    {
+        if (isCooling) return;
+
+        currentHeat += heat;
 
         if (currentHeat > heatLimit)
         {
@@ -52,6 +73,8 @@ public class OverheatSystem : MonoBehaviour
 
     private IEnumerator Cooling()
     {
+        isCooling = true;
+
         while (currentHeat > 0)
         {
             yield return null;
@@ -59,6 +82,7 @@ public class OverheatSystem : MonoBehaviour
 
         ta.enabled = true;
         tf.canFire = true;
+        isCooling = false;
     }
 
 

@@ -25,16 +25,6 @@ public class EnemyHealth : MonoBehaviour
         killTrigger = false;
     }
 
-    void Start()
-    {
-
-    }
-
-    void Update()
-    {
-        
-    }
-
     public void Damage(int damage, Card.DamageType damageType)
     {
         if (damageWeaknesses.Contains(damageType))
