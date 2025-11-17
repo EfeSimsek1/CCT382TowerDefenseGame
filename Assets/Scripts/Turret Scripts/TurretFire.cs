@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Animator))]
 public class TurretFire : MonoBehaviour
@@ -36,13 +37,18 @@ public class TurretFire : MonoBehaviour
     [SerializeField]
     private AudioClip ShootingAudioClip;
 
+    public bool canFire;
+    public UnityEvent onFire = new UnityEvent();
     private Animator Animator;
     private float LastShootTime;
     private AudioSource ShootingAudioSource;
+    private TurretAim turretAim;
 
     private void Awake()
     {
+        canFire = true;
         Animator = GetComponent<Animator>();
+        turretAim = GetComponent<TurretAim>();
         var main = ShootingSystem.main;
         main.playOnAwake = false;
         ShootingSystem.gameObject.SetActive(true);
@@ -57,7 +63,7 @@ public class TurretFire : MonoBehaviour
 
     private void Update()
     {
-        if (GetComponentInParent<TurretAim>().target != null && LastShootTime + ShootDelay < Time.time)
+        if (turretAim.target != null && LastShootTime + ShootDelay < Time.time && canFire)
         {
             Shoot();
         }
@@ -67,6 +73,8 @@ public class TurretFire : MonoBehaviour
     {
         if (LastShootTime + ShootDelay < Time.time)
         {
+            onFire.Invoke();
+
             ShootingSystem.Stop();
 
             // Use an object pool instead for these! To keep this tutorial focused, we'll skip implementing one.
@@ -83,7 +91,7 @@ public class TurretFire : MonoBehaviour
 
             Vector3 direction = GetDirection();
 
-            if (Physics.Raycast(BulletSpawnPoint.position, direction, out RaycastHit hit, float.MaxValue, Mask) && !hit.collider.gameObject.GetComponent<EnemyHealth>().killTrigger)
+            if (Physics.Raycast(BulletSpawnPoint.position, direction, out RaycastHit hit, float.MaxValue, Mask))
             {
                 TrailRenderer trail = Instantiate(BulletTrail, BulletSpawnPoint.position, Quaternion.identity);
 
@@ -145,7 +153,7 @@ public class TurretFire : MonoBehaviour
         }
         //Animator.SetBool("IsShooting", false);
         Trail.transform.position = HitPoint;
-        if (MadeImpact)
+        if (MadeImpact && objectHit)
         {
             ParticleSystem hitParticle = Instantiate(ImpactParticleSystem, HitPoint, Quaternion.LookRotation(HitNormal));
             hitParticle.transform.SetParent(objectHit);

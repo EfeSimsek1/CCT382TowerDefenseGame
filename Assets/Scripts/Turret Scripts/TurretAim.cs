@@ -19,12 +19,23 @@ public class TurretAim : MonoBehaviour
 
     void Update()
     {
+       DetermineTarget();
+
+        if(target != null)
+        {
+            Debug.DrawLine(transform.position, target.position, Color.green);
+            transform.LookAt(target.position);
+        }
+    }
+
+    private void DetermineTarget()
+    {
         target = null;
 
         Collider[] detectedEnemyColliders = Physics.OverlapSphere(transform.position, targetRadius, enemyMask);
         List<GameObject> detectedEnemies = new List<GameObject>();
 
-        foreach(Collider collider in detectedEnemyColliders)
+        foreach (Collider collider in detectedEnemyColliders)
         {
             detectedEnemies.Add(collider.gameObject);
         }
@@ -56,13 +67,8 @@ public class TurretAim : MonoBehaviour
                 }
             }
         }
-
-        if(target != null)
-        {
-            Debug.DrawLine(transform.position, target.position, Color.green);
-            transform.LookAt(target.position);
-        }
     }
+
 
     void OnDrawGizmosSelected()
     {
