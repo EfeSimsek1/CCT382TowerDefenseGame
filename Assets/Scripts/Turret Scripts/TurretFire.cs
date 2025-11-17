@@ -83,13 +83,11 @@ public class TurretFire : MonoBehaviour
 
             Vector3 direction = GetDirection();
 
-            if (Physics.Raycast(BulletSpawnPoint.position, direction, out RaycastHit hit, float.MaxValue, Mask))
+            if (Physics.Raycast(BulletSpawnPoint.position, direction, out RaycastHit hit, float.MaxValue, Mask) && !hit.collider.gameObject.GetComponent<EnemyHealth>().killTrigger)
             {
                 TrailRenderer trail = Instantiate(BulletTrail, BulletSpawnPoint.position, Quaternion.identity);
 
                 StartCoroutine(SpawnTrail(trail, hit.point, hit.normal, true, hit.collider.gameObject.transform));
-
-                hit.collider.GetComponent<EnemyHealth>().Damage(damage, damageType);
 
                 LastShootTime = Time.time;
             }
@@ -151,6 +149,7 @@ public class TurretFire : MonoBehaviour
         {
             ParticleSystem hitParticle = Instantiate(ImpactParticleSystem, HitPoint, Quaternion.LookRotation(HitNormal));
             hitParticle.transform.SetParent(objectHit);
+            objectHit.GetComponent<EnemyHealth>().Damage(damage, damageType);
         }
 
         Destroy(Trail.gameObject, Trail.time);

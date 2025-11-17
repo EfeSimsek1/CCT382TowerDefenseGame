@@ -73,6 +73,6 @@ public class CardInteractionManager : MonoBehaviour
         if (clip == null) return;
 
         AudioSource.PlayClipAtPoint(clip, Camera.main.transform.position);
-        Debug.Log("Turret Placed");
+        //Debug.Log("Turret Placed");
     }
 }

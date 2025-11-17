@@ -179,6 +179,8 @@ MonoBehaviour:
   damageOnDeath: 20
   speed: 2
   moneyDroppedOnDeath: 10
+  movementAudioClip: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!114 &7775997107955014424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,4 +194,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   maxHealth: 30
+  deathAnimTime: 0
   damageWeaknesses: 
+  deathClip: {fileID: 0}

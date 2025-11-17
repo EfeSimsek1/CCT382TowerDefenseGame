@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Linq;
 using UnityEngine;
 
@@ -5,7 +6,8 @@ public class EnemyHealth : MonoBehaviour
 {
     [Header("Attributes")]
     [SerializeField] private int maxHealth;
-    private bool killTrigger;
+    [SerializeField] private float deathAnimTime = 0.5f;
+    public bool killTrigger;
 
     [SerializeField] Card.DamageType[] damageWeaknesses;
 
@@ -53,10 +55,10 @@ public class EnemyHealth : MonoBehaviour
     
     public void Die()
     {
-            killTrigger = true;
+        killTrigger = true;
         EnemySpawner.onEnemyDestroy.Invoke(gameObject);
         GameManager.onEnemyDefeated.Invoke(gameObject);
-        audioSource.PlayOneShot(deathClip);
+        if (audioSource) audioSource.PlayOneShot(deathClip);
 
         // Change the Layer so towers won't shoot at the dying enemy
         foreach (Transform t in GetComponentsInChildren<Transform>(true))
@@ -67,14 +69,15 @@ public class EnemyHealth : MonoBehaviour
 
         behaviour.enabled = false;
         GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
-
+        //Destroy(GetComponent<Collider>());
+        GetComponent<Collider>().enabled = false;
 
         StartCoroutine(WaitAndDestroy());
+    }
 
-        System.Collections.IEnumerator WaitAndDestroy()
-        {
-            yield return new WaitForSeconds(2f);
-            UnityEngine.Object.Destroy(gameObject);
-        }
+    private IEnumerator WaitAndDestroy()
+    {
+        yield return new WaitForSeconds(deathAnimTime);
+        Destroy(gameObject);
     }
 }
