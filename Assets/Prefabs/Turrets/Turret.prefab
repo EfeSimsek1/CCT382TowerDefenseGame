@@ -120,7 +120,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7535072608204875856}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Module Positions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -157,15 +157,15 @@ GameObject:
   - component: {fileID: 3603266423091593965}
   - component: {fileID: 6523904654981897753}
   - component: {fileID: 5508715609135083553}
-  - component: {fileID: 7908122871127954978}
   - component: {fileID: 8490650394043298832}
   - component: {fileID: 6154816396456912163}
   - component: {fileID: 4472849558133530651}
+  - component: {fileID: 7908122871127954978}
   - component: {fileID: 4515413779398263528}
   - component: {fileID: 4423442261927268809}
   - component: {fileID: 7379977720101614385}
   - component: {fileID: -2531429575504258976}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -269,23 +269,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7908122871127954978
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2319720567184235521}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dfe48133ca0b73743b5d8672398e0f81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TurretAim
-  enemyMask:
-    serializedVersion: 2
-    m_Bits: 8
-  targetRadius: 5
-  target: {fileID: 0}
 --- !u!114 &8490650394043298832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -332,6 +315,27 @@ MonoBehaviour:
   moduleLimit: 3
   moduleSlotsFilled: 0
   modulePositions: []
+--- !u!114 &7908122871127954978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2319720567184235521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe48133ca0b73743b5d8672398e0f81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TurretAim
+  enemyMask:
+    serializedVersion: 2
+    m_Bits: 8
+  cloakedEnemyMask:
+    serializedVersion: 2
+    m_Bits: 256
+  targetRadius: 5
+  cloakedTargetRadius: 1.76
+  target: {fileID: 0}
 --- !u!114 &4515413779398263528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -353,8 +357,8 @@ MonoBehaviour:
   ShootDelay: 0.5
   Mask:
     serializedVersion: 2
-    m_Bits: 8
-  BulletSpeed: 100
+    m_Bits: 264
+  BulletSpeed: 200
   damage: 1
   damageType: 0
   ShootingAudioClip: {fileID: 8300000, guid: ecd5940341b9db841b58a252c720d11e, type: 3}
@@ -379,7 +383,6 @@ MonoBehaviour:
   heatLimit: 100
   heatBar: {fileID: 3829366806809600078}
   overHeatTime: 5
-  isCooling: 0
   onOverHeat:
     m_PersistentCalls:
       m_Calls: []
@@ -715,7 +718,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7054123975905090433}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: MP2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -746,7 +749,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5723057747848886793}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: MP3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -963,7 +966,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2050915042124796819}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: MP1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

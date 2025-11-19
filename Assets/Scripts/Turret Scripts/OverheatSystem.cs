@@ -84,6 +84,4 @@ public class OverheatSystem : MonoBehaviour
         tf.canFire = true;
         isCooling = false;
     }
-
-
 }

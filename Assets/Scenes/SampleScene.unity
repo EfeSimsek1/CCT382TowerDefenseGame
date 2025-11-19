@@ -1943,7 +1943,7 @@ MonoBehaviour:
   mainCamera: {fileID: 519420031}
   interactable:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 192
 --- !u!1 &532030295
 GameObject:
   m_ObjectHideFlags: 0
@@ -2816,11 +2816,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   waves:
   - enemyAmounts:
-    - enemy: {fileID: 6864183603021173478, guid: ec6e7bf1b083c8b4993df0133523f83a, type: 3}
+    - enemy: {fileID: 6864183603021173478, guid: 188324c539800034b82476aebe2e6f9e, type: 3}
+      number: 1
+    - enemy: {fileID: 6864183603021173478, guid: 100a602f03def554793bfed361837663, type: 3}
       number: 1
     enemiesSpawnedPerSecond: 0.5
   waveIndicator: {fileID: 1217074086}
-  timeBetweenWaves: 2
+  timeBetweenWaves: 1
   moneyBetweenWaves: 10
 --- !u!1001 &695558092
 PrefabInstance:

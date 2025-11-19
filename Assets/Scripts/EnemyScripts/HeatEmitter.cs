@@ -21,7 +21,7 @@ public class HeatEmitter : MonoBehaviour
         if (os != null) 
         {
             float distanceMultiplier = (aura.radius / Vector3.Distance(transform.position, other.gameObject.transform.position));
-            Debug.Log((distanceMultiplier * heat) * Time.deltaTime);
+            Debug.Log(distanceMultiplier);
             os.HeatUp((distanceMultiplier * heat) * Time.deltaTime);
         }
     }

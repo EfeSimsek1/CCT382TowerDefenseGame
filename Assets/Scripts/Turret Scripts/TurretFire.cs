@@ -91,8 +91,12 @@ public class TurretFire : MonoBehaviour
 
             Vector3 direction = GetDirection();
 
-            if (Physics.Raycast(BulletSpawnPoint.position, direction, out RaycastHit hit, float.MaxValue, Mask))
+            RaycastHit[] hits = Physics.RaycastAll(BulletSpawnPoint.position, direction, float.MaxValue, Mask);
+
+            if (hits.Length > 0)
             {
+                RaycastHit hit = ClosestHit(hits);
+
                 TrailRenderer trail = Instantiate(BulletTrail, BulletSpawnPoint.position, Quaternion.identity);
 
                 StartCoroutine(SpawnTrail(trail, hit.point, hit.normal, true, hit.collider.gameObject.transform));
@@ -161,5 +165,21 @@ public class TurretFire : MonoBehaviour
         }
 
         Destroy(Trail.gameObject, Trail.time);
+    }
+
+    // Returns the closest hit that isn't a hit on a target attached to the turret
+    private RaycastHit ClosestHit(RaycastHit[] hits)
+    {
+        RaycastHit closestHit = hits[0];
+
+        foreach (RaycastHit hit in hits)
+        {
+            if (Vector3.Distance(transform.position, hit.point) < Vector3.Distance(transform.position, closestHit.point) && !hit.collider.gameObject.transform.IsChildOf(transform))
+            {
+                closestHit = hit;
+            }
+        } 
+
+        return closestHit;
     }
 }

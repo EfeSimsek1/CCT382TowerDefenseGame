@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
@@ -11,22 +12,30 @@ public class EnemyBehaviour : MonoBehaviour
 
     public int moneyDroppedOnDeath;
 
-    private NavMeshAgent agent;
+    protected NavMeshAgent agent;
 
     [SerializeField] private AudioClip movementAudioClip;
     [SerializeField] private AudioSource audioSource;
 
     private Coroutine playCoroutine;
 
-    void Start()
+    protected virtual void Awake()
+    {
+        if (audioSource == null)
+            audioSource = GetComponent<AudioSource>() ?? gameObject.AddComponent<AudioSource>();
+        if (movementAudioClip != null)
+            playCoroutine = StartCoroutine(PlayRandomly());
+    }
+
+    protected virtual void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         agent.speed = speed;
     }
 
-    void Update()
+    protected virtual void Update()
     {
-        agent.SetDestination(LevelManager.instance.endPoint.position);
+        if (agent.enabled) agent.SetDestination(LevelManager.instance.endPoint.position);
 
         if (Vector3.Distance(transform.position, LevelManager.instance.endPoint.position) <= 0.1f)
         {
@@ -36,16 +45,12 @@ public class EnemyBehaviour : MonoBehaviour
             GameManager.onDamagePlayer.Invoke(damageOnDeath);
         }
     }
-
-    private void Awake()
+    private void FixedUpdate()
     {
-        if (audioSource == null)
-            audioSource = GetComponent<AudioSource>() ?? gameObject.AddComponent<AudioSource>();
-        if (movementAudioClip != null)
-            playCoroutine = StartCoroutine(PlayRandomly());
+
     }
 
-    private System.Collections.IEnumerator PlayRandomly()
+    private IEnumerator PlayRandomly()
     {
         while (true)
         {
@@ -65,8 +70,4 @@ public class EnemyBehaviour : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
-    {
-
-    }
 }
