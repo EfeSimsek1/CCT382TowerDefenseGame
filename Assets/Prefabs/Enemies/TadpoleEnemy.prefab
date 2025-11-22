@@ -235,7 +235,7 @@ NavMeshAgent:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1584269240062416963}
   m_Enabled: 1
-  m_AgentTypeID: 0
+  m_AgentTypeID: -334000983
   m_Radius: 0.5
   m_Speed: 3.5
   m_Acceleration: 8
@@ -280,6 +280,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   maxHealth: 5
   deathAnimTime: 0.5
+  killTrigger: 0
   damageWeaknesses: 
   deathClip: {fileID: 8300000, guid: be31997ce03f71b4e81c088ccc70614e, type: 3}
 --- !u!82 &8352802261071480051
