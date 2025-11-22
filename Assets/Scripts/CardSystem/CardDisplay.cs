@@ -7,8 +7,6 @@ public class CardDisplay : MonoBehaviour
     public Card cardData;
     public Image cardImage;
     public TMP_Text nameText;
-    public TMP_Text healthText;
-    public TMP_Text damageText;
     public TMP_Text costText;
     public Image[] typeImages;
 
@@ -20,8 +18,6 @@ public class CardDisplay : MonoBehaviour
     public void UpdateCardDisplay()
     {
         nameText.text = cardData.cardName;
-        healthText.text = cardData.health.ToString();
-        damageText.text = cardData.damage.ToString();
         costText.text = cardData.cost.ToString();
     }
 }

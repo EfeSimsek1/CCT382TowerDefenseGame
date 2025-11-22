@@ -27,6 +27,8 @@ public class EnemyHealth : MonoBehaviour
 
     public void Damage(int damage, Card.DamageType damageType)
     {
+        Debug.Log(gameObject.name + " hit");
+
         if (damageWeaknesses.Contains(damageType))
         {
             // TODO: deal extra damage

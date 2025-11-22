@@ -13,7 +13,7 @@ public class TurretDetector : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("turret detected!", other.gameObject);
+        //Debug.Log("turret detected!", other.gameObject);
         onTurretDetected.Invoke(other.transform);
     }
 

@@ -5,7 +5,12 @@ public class JumperBehaviour : EnemyBehaviour
     [Header("Jumper Attributes")]
     [SerializeField]
     private float height = 5f;
+    [SerializeField]
+    private float damageTime = 5f;
     private bool launchInitiated;
+    private GameObject victimTurret;
+    //private float damageTimer = 0f;
+
 
     private Rigidbody rb;
 
@@ -29,6 +34,12 @@ public class JumperBehaviour : EnemyBehaviour
         base.Start();
     }
 
+    protected override void Update()
+    {
+        base.Update();
+
+    }
+
     private void Launch(Transform target)
     {
         //Debug.Log(CalculateLaunchVelocity(transform.position, target.position, height));
@@ -38,8 +49,10 @@ public class JumperBehaviour : EnemyBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        transform.SetParent(collision.gameObject.transform);
+        transform.SetParent(collision.gameObject.transform.root);
         rb.isKinematic = true;
+        victimTurret = collision.gameObject.transform.root.gameObject;
+        InvokeRepeating("DamageTurret", damageTime, damageTime);
     }
 
     /// Calculates the initial velocity needed to launch from A to B with a specific apex height.
@@ -69,5 +82,10 @@ public class JumperBehaviour : EnemyBehaviour
         Vector3 initialVelocityXZ = horizontalDisplacement / totalTime;
 
         return new Vector3(initialVelocityXZ.x, initialVelocityY, initialVelocityXZ.z);
+    }
+
+    private void DamageTurret()
+    {
+        //victimTurret.GetComponent<ModuleController>().
     }
 }

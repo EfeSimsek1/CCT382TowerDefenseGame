@@ -17,16 +17,16 @@ public class OverheatSystem : MonoBehaviour
     public UnityEvent<float> onOverHeat = new UnityEvent<float>();
 
     private float currentHeat;
-    private TurretFire tf;
+    private ShootingController tf;
     private TurretAim ta;
 
     private void Awake()
     {
         isCooling = false;
         currentHeat = 0;
-        tf = GetComponent<TurretFire>();
+        tf = GetComponent<ShootingController>();
         ta = GetComponent<TurretAim>();
-        tf.onFire.AddListener(HeatUp);
+        tf.onShoot.AddListener(HeatUp);
     }
 
     void Update()

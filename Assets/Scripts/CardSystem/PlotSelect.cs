@@ -28,7 +28,7 @@ public class PlotSelect : Interactable
             float turretRadius = previewTurret.GetComponent<TurretAim>().targetRadius;
             Destroy(previewTurret.GetComponent<Interactable>());
             Destroy(previewTurret.GetComponent<TurretAim>());
-            Destroy(previewTurret.GetComponent<TurretFire>());
+            Destroy(previewTurret.GetComponent<ShootingController>());
             previewTurret.layer = 0;
             Transform rangeIndicator = previewTurret.transform.Find("RangeIndicator");
             if (rangeIndicator != null)

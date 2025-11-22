@@ -8,12 +8,14 @@ public class TurretSelect : Interactable
     [SerializeField] private GameObject previewModule;
     private float turretRadius;
     private ModuleController mc;
+    private BoxCollider bc;
 
     void Start()
     {
         turretRadius = GetComponent<TurretAim>().targetRadius;
         rangeIndicator.SetActive(false);
         mc = GetComponent<ModuleController>();
+        bc = GetComponent<BoxCollider>();
     }
 
     void Update()
@@ -39,9 +41,11 @@ public class TurretSelect : Interactable
         {
             if (mc.CanAddModule())
             {
-                previewModule = Instantiate(CardInteractionManager.HeldCard.moduleModel, mc.modulePositions[mc.moduleSlotsFilled].position, transform.rotation, transform);
+                previewModule = Instantiate(CardInteractionManager.HeldCard.moduleModel, transform.position, transform.rotation, transform);
+                Collider moduleCollider = previewModule.GetComponent<Collider>();
+                previewModule.transform.localPosition = transform.forward * (bc.bounds.extents.z + moduleCollider.bounds.extents.z);
                 previewModule.GetComponent<PreviewObject>().transparency = modulePreviewTransparency;
-                Destroy(previewModule.GetComponent<TurretFire>());
+                Destroy(previewModule.GetComponent<ShootingController>());
             }
             else
             {

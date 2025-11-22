@@ -1922,7 +1922,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0.5599162, y: 0, z: 0, w: 0.82854927}
-  m_LocalPosition: {x: 6.3, y: 45.42, z: -28.99}
+  m_LocalPosition: {x: 6.3, y: 40, z: -26}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2816,11 +2816,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   waves:
   - enemyAmounts:
-    - enemy: {fileID: 6864183603021173478, guid: 188324c539800034b82476aebe2e6f9e, type: 3}
-      number: 1
     - enemy: {fileID: 6864183603021173478, guid: 100a602f03def554793bfed361837663, type: 3}
-      number: 1
-    enemiesSpawnedPerSecond: 0.5
+      number: 4
+    enemiesSpawnedPerSecond: 1
   waveIndicator: {fileID: 1217074086}
   timeBetweenWaves: 1
   moneyBetweenWaves: 10
