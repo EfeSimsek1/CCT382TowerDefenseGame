@@ -20,6 +20,7 @@ public class EnemySpawner : MonoBehaviour
 
     [Header("Events")]
     public static UnityEvent<GameObject> onEnemyDestroy = new UnityEvent<GameObject>();
+    public static UnityEvent<GameObject, int> onEnemyMultiply = new UnityEvent<GameObject, int>();
 
     private int currentWave = 0;
     private float timeSinceLastSpawn;

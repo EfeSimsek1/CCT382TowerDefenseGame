@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 
 public class SlimeHealth : EnemyHealth
@@ -19,6 +20,7 @@ public class SlimeHealth : EnemyHealth
 
         //Split into two smaller slimes if possible
         float newSlimeHealth = maxHealth / 2f; 
+        EnemySpawner.onEnemyMultiply.Invoke(gameObject, 2);
         if (newSlimeHealth >= 1)
         {
             for (int i = 0; i < 2; i++)
@@ -32,6 +34,10 @@ public class SlimeHealth : EnemyHealth
                 // Adjust scale
                 newSlime.transform.localScale = transform.localScale * 0.75f; // Scale down to 75%
                 newSlime.GetComponent<EnemyBehaviour>().speed *= 1.2f; // Increase speed slightly
+                newSlime.GetComponent<EnemyBehaviour>().moneyDroppedOnDeath = Mathf.Max(1, newSlime.GetComponent<EnemyBehaviour>().moneyDroppedOnDeath / 2); // Reduce money dropped
+                newSlime.GetComponent<EnemyBehaviour>().damageOnDeath = Mathf.Max(1, newSlime.GetComponent<EnemyBehaviour>().damageOnDeath / 2); // Reduce damage on death
+                newSlime.GetComponent<EnemyHealth>().deathClip = deathClip;
+
             }
         }
 

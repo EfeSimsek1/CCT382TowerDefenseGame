@@ -195,5 +195,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   maxHealth: 30
   deathAnimTime: 0
+  killTrigger: 0
   damageWeaknesses: 
   deathClip: {fileID: 0}

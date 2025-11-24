@@ -5,7 +5,7 @@ using UnityEngine.AI;
 public class EnemyBehaviour : MonoBehaviour
 {
     [SerializeField]
-    private int damageOnDeath;
+    public int damageOnDeath;
     [SerializeField]
     public float speed;
 
@@ -28,7 +28,7 @@ public class EnemyBehaviour : MonoBehaviour
     {
         agent.SetDestination(LevelManager.instance.endPoint.position);
 
-        if (Vector3.Distance(transform.position, LevelManager.instance.endPoint.position) <= 0.1f)
+        if (Vector3.Distance(transform.position, LevelManager.instance.endPoint.position) <= 1.2f)
         {
             // Destroy enemy and inflict damage to the player
             Destroy(gameObject);

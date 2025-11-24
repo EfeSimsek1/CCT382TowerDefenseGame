@@ -3056,8 +3056,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   waves:
   - enemyAmounts:
+    - enemy: {fileID: 6864183603021173478, guid: 100a602f03def554793bfed361837663, type: 3}
+      number: 1
     - enemy: {fileID: 4826609203577792511, guid: ffd2fffe91ad6c749aa54a4b6ec1197d, type: 3}
-      number: 5
+      number: 1
+    - enemy: {fileID: 1741049611956649905, guid: cc8e0a1322b617f468f73c18ec3324ee, type: 3}
+      number: 1
+    - enemy: {fileID: 1584269240062416963, guid: 9bb2bb11e0cf189409e1209663ca3fb9, type: 3}
+      number: 1
     enemiesSpawnedPerSecond: 0.5
   waveIndicator: {fileID: 1217074086}
   timeBetweenWaves: 2
@@ -6035,7 +6041,7 @@ Transform:
   m_GameObject: {fileID: 1350560276}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.6, y: 0, z: -14.400001}
+  m_LocalPosition: {x: 9.6, y: 0.259, z: -14.73}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

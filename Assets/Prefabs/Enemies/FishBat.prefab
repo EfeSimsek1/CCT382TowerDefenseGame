@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c499fc9f507476443aace8b36d830c4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyBehaviour
-  damageOnDeath: 0
+  damageOnDeath: 20
   speed: 1
   moneyDroppedOnDeath: 20
   movementAudioClip: {fileID: 8300000, guid: 17305ec2de6c3dd4c8a19aadceb58824, type: 3}
