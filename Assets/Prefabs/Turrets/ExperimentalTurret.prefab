@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 7379977720101614385}
   - component: {fileID: -2531429575504258976}
   m_Layer: 7
-  m_Name: Turret
+  m_Name: ExperimentalTurret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -338,7 +338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50b8c0208033b5548a4aeb1b3d246387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OverheatSystem
-  heatPerShot: 25
+  heatPerShot: 40
   coolingPerSec: 5
   heatLimit: 100
   heatBar: {fileID: 3829366806809600078}

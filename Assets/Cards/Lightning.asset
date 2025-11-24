@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0aa3f8735d5b62443a3b31d5674d33ea, type: 3}
-  m_Name: TestModuleCard
+  m_Name: Lightning
   m_EditorClassIdentifier: Assembly-CSharp::Card
-  cardName: Module
-  cardSprite: {fileID: 4315214628464698562, guid: feba25532896a6b409dbc2b1898188f8, type: 3}
-  cost: 20
+  cardName: StartingGunModule
+  cardSprite: {fileID: 0}
+  cost: 0
   cardType: 1
-  moduleModel: {fileID: 2440941003837750162, guid: 22f966614acccfd4199042e0df22cc2d, type: 3}
+  moduleModel: {fileID: 2440941003837750162, guid: 44a6de557bb6ebf438a1e6feddcedf6c, type: 3}
   moduleType: 0

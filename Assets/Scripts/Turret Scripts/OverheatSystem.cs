@@ -16,23 +16,23 @@ public class OverheatSystem : MonoBehaviour
 
     public UnityEvent<float> onOverHeat = new UnityEvent<float>();
 
-    private float currentHeat;
-    private ShootingController tf;
+    public float currentHeat;
+    private ShootingController shootingController;
     private TurretAim ta;
 
     private void Awake()
     {
         isCooling = false;
         currentHeat = 0;
-        tf = GetComponent<ShootingController>();
+        shootingController = GetComponent<ShootingController>();
         ta = GetComponent<TurretAim>();
-        tf.onShoot.AddListener(HeatUp);
+        shootingController.onShoot.AddListener(HeatUp);
     }
 
     void Update()
     {
         currentHeat -= Time.fixedDeltaTime * coolingPerSec;
-        currentHeat = Mathf.Clamp(currentHeat, 0, 100);
+        currentHeat = Mathf.Clamp(currentHeat, 0, heatLimit);
 
         heatBar.value = currentHeat / heatLimit;
     }
@@ -48,7 +48,7 @@ public class OverheatSystem : MonoBehaviour
             currentHeat = heatLimit;
 
             // Overheat turret
-            tf.canFire = false;
+            shootingController.canFire = false;
             ta.enabled = false;
             StartCoroutine(Cooling());
         }
@@ -65,7 +65,7 @@ public class OverheatSystem : MonoBehaviour
             currentHeat = heatLimit;
 
             // Overheat turret
-            tf.canFire = false;
+            shootingController.canFire = false;
             ta.enabled = false;
             StartCoroutine(Cooling());
         }
@@ -81,7 +81,9 @@ public class OverheatSystem : MonoBehaviour
         }
 
         ta.enabled = true;
-        tf.canFire = true;
+        shootingController.Cool();
         isCooling = false;
+
+        Debug.Log("Cooling complete");
     }
 }

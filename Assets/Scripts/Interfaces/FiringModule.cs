@@ -4,5 +4,7 @@ using static Card;
 
 public interface IFiringModule
 {
-    GameObject Shoot(LayerMask mask);
+    void Shoot(LayerMask mask, int damage, DamageType damageType);
+
+    void DestroyModule();
 }

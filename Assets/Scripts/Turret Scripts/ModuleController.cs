@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class ModuleController : MonoBehaviour
 {
+    [Header("Attributes")]
+    public Transform gunModuleSocket;
+
+    [Header("References")]
+    [SerializeField]
+    private Card startingGunModule;
 
     public List<Module> modules = new List<Module>();
     private Card gunModule;
+    private bool usingBaseGun;
     
-    public int moduleLimit;
-    public int moduleSlotsFilled;
+    public int supportModuleLimit;
+    public int supportSlotsFilled;
 
     private BoxCollider bc;
     ShootingController shootControl;
@@ -19,44 +26,81 @@ public class ModuleController : MonoBehaviour
         modules = new List<Module>();
         bc = GetComponent<BoxCollider>();
         shootControl = GetComponent<ShootingController>();
+        if (startingGunModule)
+        {
+            AddModule(startingGunModule);
+        }
+        usingBaseGun = true;
     }
 
     public void AddModule(Card card)
     {
         if (card.cardType == Card.CardType.Module)
         {
-            // Add module
-            if (moduleSlotsFilled == 0)
+            if (card.moduleType == Card.ModuleType.Firing && shootControl.firingModule == null)
             {
-                GameObject module = Instantiate(card.moduleModel, transform.position, transform.rotation, transform);
+                #region Add starting module
 
-                Collider moduleCollider = module.GetComponent<Collider>();
+                GameObject module = Instantiate(card.moduleModel, gunModuleSocket.position, gunModuleSocket.rotation, gunModuleSocket);
 
-                module.transform.localPosition = transform.forward * (bc.bounds.extents.z + moduleCollider.bounds.extents.z);
-
-                IFiringModule firingModule = module.GetComponent<IFiringModule>();
+                IFiringModule firingModule = module.GetComponentInChildren<IFiringModule>();
 
                 if (firingModule != null)
                 {
                     shootControl.firingModule = firingModule;
                 }
+
+                #endregion
             }
-           
-            //modules.Add(module);
-            moduleSlotsFilled++;
+            else if(card.moduleType == Card.ModuleType.Firing && usingBaseGun) 
+            {
+                #region replace starting module
+
+                GameObject module = Instantiate(card.moduleModel, gunModuleSocket.position, gunModuleSocket.rotation, gunModuleSocket);
+
+                IFiringModule firingModule = module.GetComponentInChildren<IFiringModule>();
+
+                if (firingModule != null)
+                {
+                    shootControl.firingModule.DestroyModule();
+
+                    shootControl.firingModule = firingModule;
+                }
+
+                usingBaseGun = false;
+
+                #endregion
+            }
+            else if(card.moduleType == Card.ModuleType.Support)
+            {
+                //add support module
+                supportSlotsFilled++;
+            }
         }
     }
 
-    public bool CanAddModule()
+    public bool CanAddModule(Card card)
     {
-        return moduleSlotsFilled < moduleLimit;
+        return (card.moduleType == Card.ModuleType.Firing && usingBaseGun) || (card.moduleType == Card.ModuleType.Support && (supportSlotsFilled < supportModuleLimit));
     }
 
     public void DamageTurret()
     {
-        if (moduleSlotsFilled > 0)
+        if (supportSlotsFilled == 0 && !usingBaseGun)
         {
-            
+            shootControl.firingModule.DestroyModule();
+            shootControl.firingModule = null;
+            AddModule(startingGunModule);
+            usingBaseGun = true;
+        }
+        else if (supportSlotsFilled == 0)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            // destroy support module
+            supportSlotsFilled--;
         }
     }
 }

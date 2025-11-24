@@ -39,12 +39,11 @@ public class TurretSelect : Interactable
 
         if (CardInteractionManager.IsCardHeld() && CardInteractionManager.HeldCard.cardType == Card.CardType.Module && CardInteractionManager.LastHeldCard.moduleModel != null)
         {
-            if (mc.CanAddModule())
+            if (mc.CanAddModule(CardInteractionManager.HeldCard))
             {
-                previewModule = Instantiate(CardInteractionManager.HeldCard.moduleModel, transform.position, transform.rotation, transform);
-                Collider moduleCollider = previewModule.GetComponent<Collider>();
-                previewModule.transform.localPosition = transform.forward * (bc.bounds.extents.z + moduleCollider.bounds.extents.z);
-                previewModule.GetComponent<PreviewObject>().transparency = modulePreviewTransparency;
+                previewModule = Instantiate(CardInteractionManager.HeldCard.moduleModel, mc.gunModuleSocket.position, mc.gunModuleSocket.rotation, mc.gunModuleSocket);
+                previewModule.GetComponentInChildren<PreviewObject>().transparency = modulePreviewTransparency;
+
                 Destroy(previewModule.GetComponent<ShootingController>());
             }
             else
@@ -77,7 +76,7 @@ public class TurretSelect : Interactable
             // Add module to turret, and add module model. Also destroy module preview
             Destroy(previewModule);
 
-            if (mc.CanAddModule())
+            if (mc.CanAddModule(CardInteractionManager.LastHeldCard))
             {
                 mc.AddModule(CardInteractionManager.LastHeldCard);
             }

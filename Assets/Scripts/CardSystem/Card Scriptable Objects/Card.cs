@@ -10,6 +10,7 @@ public class Card : ScriptableObject
     public int cost;
     public CardType cardType;
     public GameObject moduleModel;
+    public ModuleType moduleType;
 
     public enum CardType
     {
@@ -24,5 +25,11 @@ public class Card : ScriptableObject
         Eletric,
         Explosive,
         Corrosive
+    }
+
+    public enum ModuleType
+    {
+        Firing,
+        Support
     }
 }

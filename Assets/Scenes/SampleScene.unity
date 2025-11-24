@@ -2816,8 +2816,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   waves:
   - enemyAmounts:
+    - enemy: {fileID: 6864183603021173478, guid: c1cf84c788a5db44db390a1bb431c891, type: 3}
+      number: 1
     - enemy: {fileID: 6864183603021173478, guid: 100a602f03def554793bfed361837663, type: 3}
-      number: 4
+      number: 1
     enemiesSpawnedPerSecond: 1
   waveIndicator: {fileID: 1217074086}
   timeBetweenWaves: 1

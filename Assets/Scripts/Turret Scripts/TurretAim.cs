@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -34,9 +35,11 @@ public class TurretAim : MonoBehaviour
     {
         target = null;
 
-        Collider[] detectedEnemyColliders = Physics.OverlapSphere(transform.position, targetRadius, enemyMask);
-        Collider[] detectedCloakedEnemyColliders = Physics.OverlapSphere(transform.position, cloakedTargetRadius, cloakedEnemyMask);
-        List<GameObject> detectedEnemies = new List<GameObject>();
+        Collider[] detectedEnemyColliders = Physics.OverlapCapsule(transform.position, transform.position + Vector3.up * 10f, targetRadius, enemyMask);
+        Collider[] detectedCloakedEnemyColliders = Physics.OverlapCapsule(transform.position, transform.position + Vector3.up * 10f, targetRadius, cloakedEnemyMask);
+
+
+        List <GameObject> detectedEnemies = new List<GameObject>();
 
         foreach (Collider collider in detectedEnemyColliders)
         {
@@ -62,11 +65,12 @@ public class TurretAim : MonoBehaviour
         }
         else
         {
+            #region Base Filter
             Transform closestNonCloaked = null;
 
             foreach (Collider hitCollider in detectedEnemyColliders)
             {
-                if (closestNonCloaked == null || Vector3.Distance(transform.position, hitCollider.gameObject.transform.position) < Vector3.Distance(transform.position, closestNonCloaked.position))
+                if (closestNonCloaked == null || GetXYDistance(transform.position, hitCollider.gameObject.transform.position) < GetXYDistance(transform.position, closestNonCloaked.position))
                 {
                     closestNonCloaked = hitCollider.gameObject.transform;
                 }
@@ -76,13 +80,13 @@ public class TurretAim : MonoBehaviour
 
             foreach (Collider hitCollider in detectedCloakedEnemyColliders)
             {
-                if (!hitCollider.gameObject.transform.IsChildOf(transform) && (closestCloaked == null || Vector3.Distance(transform.position, hitCollider.gameObject.transform.position) < Vector3.Distance(transform.position, closestCloaked.position)))
+                if (!hitCollider.gameObject.transform.IsChildOf(transform) && (closestCloaked == null || GetXYDistance(transform.position, hitCollider.gameObject.transform.position) < GetXYDistance(transform.position, closestCloaked.position)))
                 {
                     closestCloaked = hitCollider.gameObject.transform;
                 }
             }
 
-            if (closestNonCloaked == null || (closestNonCloaked != null && closestCloaked != null && Vector3.Distance(transform.position, closestCloaked.position) < Vector3.Distance(transform.position, closestNonCloaked.position)))
+            if (closestNonCloaked == null || (closestNonCloaked != null && closestCloaked != null && GetXYDistance(transform.position, closestCloaked.position) < GetXYDistance(transform.position, closestNonCloaked.position)))
             {
                 target = closestCloaked;
             }
@@ -90,7 +94,18 @@ public class TurretAim : MonoBehaviour
             {
                 target = closestNonCloaked;
             }
+            #endregion
         }
+    }
+
+    private Vector3 GetXYPos(Vector3 pos)
+    {
+        return new Vector3(pos.x, 0f, pos.y);
+    }
+
+    private float GetXYDistance(Vector3 p1, Vector3 p2)
+    {
+        return Vector3.Distance(GetXYPos(p1), GetXYPos(p2));
     }
 
 

@@ -27,7 +27,7 @@ public class EnemyHealth : MonoBehaviour
 
     public void Damage(int damage, Card.DamageType damageType)
     {
-        Debug.Log(gameObject.name + " hit");
+        //Debug.Log(gameObject.name + " hit");
 
         if (damageWeaknesses.Contains(damageType))
         {
@@ -60,7 +60,7 @@ public class EnemyHealth : MonoBehaviour
         gameObject.layer = LayerMask.NameToLayer("Default");
 
         behaviour.enabled = false;
-        GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+        //GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
         //Destroy(GetComponent<Collider>());
         GetComponent<Collider>().enabled = false;
 

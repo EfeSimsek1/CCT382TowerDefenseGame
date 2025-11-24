@@ -21,7 +21,7 @@ public class MachineGunModule : MonoBehaviour, IFiringModule
         muzzleFlashEffect.gameObject.SetActive(true);
     }
 
-    public GameObject Shoot(LayerMask mask)
+    public void Shoot(LayerMask mask, int damage, DamageType damageType)
     {
         muzzleFlashEffect.Stop();
 
@@ -39,14 +39,13 @@ public class MachineGunModule : MonoBehaviour, IFiringModule
 
         if (hit.collider != null)
         {
-
             //if (hit.collider.gameObject.name == "Jumper(Clone)" && hit.collider.gameObject.transform.IsChildOf(transform)) Debug.Log("BUG - Jumper is being hit by the turret it's attached to");
 
             TrailRenderer trail = Instantiate(bulletTrail, bulletSpawnPoint.position, Quaternion.identity);
 
             StartCoroutine(SpawnTrail(trail, hit.point, hit.normal, true, hit.collider.gameObject.transform));
 
-            return hit.collider.gameObject;
+            hit.collider.gameObject.GetComponent<EnemyHealth>().Damage(damage, damageType);
         }
         // this has been updated to fix a problem where you cannot fire if you would not hit anything
         // uncomment the code below if you decide to add bullet spread
@@ -58,9 +57,8 @@ public class MachineGunModule : MonoBehaviour, IFiringModule
 
             return null;
         }*/
-
-        return null;
     }
+
 
     private IEnumerator SpawnTrail(TrailRenderer Trail, Vector3 HitPoint, Vector3 HitNormal, bool MadeImpact, Transform objectHit)
     {
@@ -107,6 +105,9 @@ public class MachineGunModule : MonoBehaviour, IFiringModule
         return closestHit;
     }
 
-
+    public void DestroyModule()
+    {
+        Destroy(gameObject);
+    }
 }
 

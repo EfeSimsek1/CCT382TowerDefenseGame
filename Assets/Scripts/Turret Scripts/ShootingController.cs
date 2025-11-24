@@ -46,7 +46,7 @@ public class ShootingController : MonoBehaviour
 
     private void Update()
     {
-        if (turretAim.target != null && LastShootTime + ShootDelay < Time.time && canFire)
+        if (turretAim.target != null && LastShootTime + ShootDelay < Time.time && canFire && firingModule != null)
         {
             Shoot();
         }
@@ -54,20 +54,20 @@ public class ShootingController : MonoBehaviour
 
     public void Shoot()
     {
-        if (LastShootTime + ShootDelay < Time.time && firingModule != null)
-        {
-            onShoot.Invoke();
+        onShoot.Invoke();
 
-            // Have firing module shoot
-            GameObject shotEnemy = firingModule.Shoot(mask);
+        // Have firing module shoot
+        firingModule.Shoot(mask, damage, damageType);
 
-            if (shotEnemy)
-            {
-                shotEnemy.GetComponent<EnemyHealth>().Damage(damage, damageType);
-            }
+        LastShootTime = Time.time;
 
-            LastShootTime = Time.time;
-        }
+        Debug.Log("Can fire: " + canFire);
+    }
+
+    public void Cool()
+    {
+        canFire = true;
+        LastShootTime = Time.time;
     }
 
     private void PlayShootingSound()

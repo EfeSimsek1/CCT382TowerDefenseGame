@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class JumperBehaviour : EnemyBehaviour
+public class JumperBehaviour : GroundedEnemyBehaviour
 {
     [Header("Jumper Attributes")]
     [SerializeField]
@@ -86,6 +86,6 @@ public class JumperBehaviour : EnemyBehaviour
 
     private void DamageTurret()
     {
-        //victimTurret.GetComponent<ModuleController>().
+        victimTurret.GetComponent<ModuleController>().DamageTurret();
     }
 }
