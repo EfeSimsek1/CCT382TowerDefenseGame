@@ -128,6 +128,19 @@ public class EnemySpawner : MonoBehaviour
         enemiesTotalAlive--;
     }
 
+    private void OnEnemyMultiply(GameObject enemy, int numberToAdd)
+    {
+        if (enemiesAlive.ContainsKey(enemy))
+        {
+            enemiesAlive[enemy] += numberToAdd;
+        }
+        else
+        {
+            enemiesAlive[enemy] = numberToAdd;
+        }
+        enemiesTotalAlive += numberToAdd;
+    }
+
     private String printEnemiesRemaining()
     {
         String s = "";

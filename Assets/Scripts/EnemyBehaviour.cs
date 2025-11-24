@@ -7,7 +7,7 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField]
     private int damageOnDeath;
     [SerializeField]
-    private float speed;
+    public float speed;
 
     public int moneyDroppedOnDeath;
 
