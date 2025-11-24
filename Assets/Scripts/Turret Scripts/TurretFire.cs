@@ -81,15 +81,42 @@ public class TurretFire : MonoBehaviour
             // play the shooting sound using the AudioSource attached to this GameObject
             PlayShootingSound();
 
-            Vector3 direction = GetDirection();
+            Transform target = GetComponentInParent<TurretAim>()?.target;
 
-            if (Physics.Raycast(BulletSpawnPoint.position, direction, out RaycastHit hit, float.MaxValue, Mask) && !hit.collider.gameObject.GetComponent<EnemyHealth>().killTrigger)
+            Vector3 direction;
+            if (target != null)
             {
-                TrailRenderer trail = Instantiate(BulletTrail, BulletSpawnPoint.position, Quaternion.identity);
+                // aim at the center of the target's collider
+                Collider targetCollider = target.GetComponent<Collider>();
+                Vector3 targetCenter = (targetCollider != null) ? targetCollider.bounds.center : target.position;
 
-                StartCoroutine(SpawnTrail(trail, hit.point, hit.normal, true, hit.collider.gameObject.transform));
+                direction = (targetCenter - BulletSpawnPoint.position).normalized;
 
-                LastShootTime = Time.time;
+                // bullet spread
+                if (AddBulletSpread)
+                {
+                    direction += new Vector3(
+                        Random.Range(-BulletSpreadVariance.x, BulletSpreadVariance.x),
+                        Random.Range(-BulletSpreadVariance.y, BulletSpreadVariance.y),
+                        Random.Range(-BulletSpreadVariance.z, BulletSpreadVariance.z)
+                    );
+                    direction.Normalize();
+                }
+            }
+            else
+            {
+                direction = GetDirection();
+            }
+
+            if (Physics.Raycast(BulletSpawnPoint.position, direction, out RaycastHit hit, float.MaxValue, Mask))
+            {
+                var enemyHealth = hit.collider.gameObject.GetComponent<EnemyHealth>();
+                if (enemyHealth != null && !enemyHealth.killTrigger)
+                {
+                    TrailRenderer trail = Instantiate(BulletTrail, BulletSpawnPoint.position, Quaternion.identity);
+                    StartCoroutine(SpawnTrail(trail, hit.point, hit.normal, true, hit.collider.gameObject.transform));
+                    LastShootTime = Time.time;
+                }
             }
             // this has been updated to fix a problem where you cannot fire if you would not hit anything
             else
