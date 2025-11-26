@@ -32,14 +32,13 @@ public class CardInteractionManager : MonoBehaviour
         deckManager = FindFirstObjectByType<DeckManager>();
         discardManager = FindFirstObjectByType<DiscardManager>();
         audioSource = GetComponent<AudioSource>();
-
     }
 
     public static void HoldCard(Card card)
     {
         heldCard = card;
         lastHeldCard = card;
-        PlayAudioClip(cardPickupAudioClip);
+        //PlayAudioClip(cardPickupAudioClip);
     }
 
     public static void ReleaseCard()
@@ -60,7 +59,7 @@ public class CardInteractionManager : MonoBehaviour
         discardManager.AddToDiscard(card);
         handManager.DiscardCard(card);
         GameManager.onLoseMoney.Invoke(card.cost);
-        PlayAudioClip(shootingAudioClip);
+        //PlayAudioClip(shootingAudioClip);
     }
 
     public static bool CanAffordCard(Card card)

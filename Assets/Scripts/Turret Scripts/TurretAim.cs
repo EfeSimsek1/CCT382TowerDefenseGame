@@ -1,12 +1,15 @@
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class TurretAim : MonoBehaviour
 {
     public LayerMask enemyMask;
+    public LayerMask cloakedEnemyMask;
 
     public float targetRadius;
+    public float cloakedTargetRadius;
 
     public Transform target;
 
@@ -19,12 +22,26 @@ public class TurretAim : MonoBehaviour
 
     void Update()
     {
+       DetermineTarget();
+
+        if(target != null)
+        {
+            Debug.DrawLine(transform.position, target.position, Color.green);
+            transform.LookAt(target.position);
+        }
+    }
+
+    private void DetermineTarget()
+    {
         target = null;
 
-        Collider[] detectedEnemyColliders = Physics.OverlapSphere(transform.position, targetRadius, enemyMask);
-        List<GameObject> detectedEnemies = new List<GameObject>();
+        Collider[] detectedEnemyColliders = Physics.OverlapCapsule(transform.position, transform.position + Vector3.up * 10f, targetRadius, enemyMask);
+        Collider[] detectedCloakedEnemyColliders = Physics.OverlapCapsule(transform.position, transform.position + Vector3.up * 10f, targetRadius, cloakedEnemyMask);
 
-        foreach(Collider collider in detectedEnemyColliders)
+
+        List <GameObject> detectedEnemies = new List<GameObject>();
+
+        foreach (Collider collider in detectedEnemyColliders)
         {
             detectedEnemies.Add(collider.gameObject);
         }
@@ -48,21 +65,49 @@ public class TurretAim : MonoBehaviour
         }
         else
         {
+            #region Base Filter
+            Transform closestNonCloaked = null;
+
             foreach (Collider hitCollider in detectedEnemyColliders)
             {
-                if (target == null || Vector3.Distance(transform.position, hitCollider.gameObject.transform.position) < Vector3.Distance(transform.position, target.position))
+                if (closestNonCloaked == null || GetXYDistance(transform.position, hitCollider.gameObject.transform.position) < GetXYDistance(transform.position, closestNonCloaked.position))
                 {
-                    target = hitCollider.gameObject.transform;
+                    closestNonCloaked = hitCollider.gameObject.transform;
                 }
             }
-        }
 
-        if(target != null)
-        {
-            Debug.DrawLine(transform.position, target.position, Color.green);
-            transform.LookAt(target.position);
+            Transform closestCloaked = null;
+
+            foreach (Collider hitCollider in detectedCloakedEnemyColliders)
+            {
+                if (!hitCollider.gameObject.transform.IsChildOf(transform) && (closestCloaked == null || GetXYDistance(transform.position, hitCollider.gameObject.transform.position) < GetXYDistance(transform.position, closestCloaked.position)))
+                {
+                    closestCloaked = hitCollider.gameObject.transform;
+                }
+            }
+
+            if (closestNonCloaked == null || (closestNonCloaked != null && closestCloaked != null && GetXYDistance(transform.position, closestCloaked.position) < GetXYDistance(transform.position, closestNonCloaked.position)))
+            {
+                target = closestCloaked;
+            }
+            else
+            {
+                target = closestNonCloaked;
+            }
+            #endregion
         }
     }
+
+    private Vector3 GetXYPos(Vector3 pos)
+    {
+        return new Vector3(pos.x, 0f, pos.y);
+    }
+
+    private float GetXYDistance(Vector3 p1, Vector3 p2)
+    {
+        return Vector3.Distance(GetXYPos(p1), GetXYPos(p2));
+    }
+
 
     void OnDrawGizmosSelected()
     {

@@ -8,12 +8,14 @@ public class TurretSelect : Interactable
     [SerializeField] private GameObject previewModule;
     private float turretRadius;
     private ModuleController mc;
+    private BoxCollider bc;
 
     void Start()
     {
         turretRadius = GetComponent<TurretAim>().targetRadius;
         rangeIndicator.SetActive(false);
         mc = GetComponent<ModuleController>();
+        bc = GetComponent<BoxCollider>();
     }
 
     void Update()
@@ -37,11 +39,13 @@ public class TurretSelect : Interactable
 
         if (CardInteractionManager.IsCardHeld() && CardInteractionManager.HeldCard.cardType == Card.CardType.Module && CardInteractionManager.LastHeldCard.moduleModel != null)
         {
-            if (mc.CanAddModule())
+            if (mc.CanAddModule(CardInteractionManager.HeldCard))
             {
-                previewModule = Instantiate(CardInteractionManager.HeldCard.moduleModel, mc.modulePositions[mc.moduleSlotsFilled].position, transform.rotation, transform);
-                previewModule.GetComponent<PreviewObject>().transparency = modulePreviewTransparency;
-                Destroy(previewModule.GetComponent<TurretFire>());
+                previewModule = Instantiate(CardInteractionManager.HeldCard.moduleModel, mc.gunModuleSocket.position, mc.gunModuleSocket.rotation, mc.gunModuleSocket);
+                previewModule.GetComponentInChildren<PreviewObject>().transparency = modulePreviewTransparency;
+
+                Destroy(previewModule.GetComponent<ShootingController>());
+                Destroy((MonoBehaviour)previewModule.GetComponentInChildren<IFiringModule>());
             }
             else
             {
@@ -73,7 +77,7 @@ public class TurretSelect : Interactable
             // Add module to turret, and add module model. Also destroy module preview
             Destroy(previewModule);
 
-            if (mc.CanAddModule())
+            if (mc.CanAddModule(CardInteractionManager.LastHeldCard))
             {
                 mc.AddModule(CardInteractionManager.LastHeldCard);
             }
