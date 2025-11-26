@@ -28,6 +28,7 @@ public class EnemySpawner : MonoBehaviour
     private Dictionary<GameObject, int> enemiesLeftToSpawn = new Dictionary<GameObject, int>();
     private Dictionary<String, GameObject> nameToPrefab = new Dictionary<String, GameObject>();
     private bool isSpawning = false;
+    private bool waitingForNextWave = false;
 
     private void Awake()
     {
@@ -41,7 +42,6 @@ public class EnemySpawner : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(StartWave());
         enemiesTotalAlive = 0;
     }
 
@@ -64,13 +64,14 @@ public class EnemySpawner : MonoBehaviour
 
         waveIndicator.text = $"Wave: {currentWave + 1}, Enemies Left: \n {printEnemiesRemaining()}";
     }
-    private IEnumerator StartWave()
+    public void StartWave()
     {
-        yield return new WaitForSeconds(timeBetweenWaves);
+        //yield return new WaitForSeconds(timeBetweenWaves);
         isSpawning = true;
         timeSinceLastSpawn = 0;
         SetEnemiesPerWave();
         //Debug.Log($"Wave {currentWave + 1} started");
+        waitingForNextWave = false;
     }
 
     void EndWave()
@@ -78,10 +79,9 @@ public class EnemySpawner : MonoBehaviour
         isSpawning = false;
         timeSinceLastSpawn = 0f;
         currentWave++;
-        if(currentWave < waves.Length)
-        {
-            StartCoroutine(StartWave());
-        }
+
+        waitingForNextWave = true;
+
         GameManager.onGainMoney.Invoke(moneyBetweenWaves);
 
         //Debug.Log($"Wave {currentWave} ended");
