@@ -43,6 +43,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void Start()
     {
+        waitingForNextWave = true;
         enemiesTotalAlive = 0;
     }
 
@@ -65,7 +66,7 @@ public class EnemySpawner : MonoBehaviour
 
         waveIndicator.text = $"Wave: {currentWave + 1}, Enemies Left: \n {printEnemiesRemaining()}";
     }
-    public void StartWave()
+    private void StartWave()
     {
         //yield return new WaitForSeconds(timeBetweenWaves);
         isSpawning = true;
@@ -86,6 +87,14 @@ public class EnemySpawner : MonoBehaviour
         GameManager.onGainMoney.Invoke(moneyBetweenWaves);
 
         //Debug.Log($"Wave {currentWave} ended");
+    }
+
+    public void AttemptNextWave()
+    {
+        if (waitingForNextWave) 
+        {
+            StartWave();
+        }
     }
 
     private void SpawnEnemy()

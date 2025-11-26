@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class JumperBehaviour : GroundedEnemyBehaviour
+public class JumperBehaviour : EnemyBehaviour
 {
     [Header("Jumper Attributes")]
     [SerializeField]
@@ -36,8 +36,10 @@ public class JumperBehaviour : GroundedEnemyBehaviour
 
     protected override void Update()
     {
-        base.Update();
-
+        if(!launchInitiated)
+        {
+            base.Update();
+        }
     }
 
     private void Launch(Transform target)

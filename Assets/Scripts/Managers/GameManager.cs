@@ -95,7 +95,7 @@ public class GameManager : MonoBehaviour
 
     private void ExtractFromEnemy(GameObject enemy)
     {
-        GroundedEnemyBehaviour enemyB = enemy.GetComponent<GroundedEnemyBehaviour>(); 
+        EnemyBehaviour enemyB = enemy.GetComponent<EnemyBehaviour>(); 
         if (enemyB)
         {
             GainMoney(enemyB.moneyDroppedOnDeath);
