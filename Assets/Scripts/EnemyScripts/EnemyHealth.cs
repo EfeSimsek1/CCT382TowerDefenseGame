@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     [Header("Attributes")]
-    [SerializeField] private int maxHealth;
+    [SerializeField] public int maxHealth;
     [SerializeField] private float deathAnimTime = 0.5f;
     public bool killTrigger;
 
@@ -45,7 +45,7 @@ public class EnemyHealth : MonoBehaviour
         }
     }
     
-    public void Die()
+    public virtual void Die()
     {
         killTrigger = true;
         EnemySpawner.onEnemyDestroy.Invoke(gameObject);

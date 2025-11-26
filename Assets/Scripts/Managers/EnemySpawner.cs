@@ -20,6 +20,7 @@ public class EnemySpawner : MonoBehaviour
 
     [Header("Events")]
     public static UnityEvent<GameObject> onEnemyDestroy = new UnityEvent<GameObject>();
+    public static UnityEvent<GameObject, int> onEnemyMultiply = new UnityEvent<GameObject, int>();
 
     private int currentWave = 0;
     private float timeSinceLastSpawn;
@@ -126,6 +127,19 @@ public class EnemySpawner : MonoBehaviour
     {
         enemiesAlive[nameToPrefab[enemy.name.Replace("(Clone)", "")]]--;
         enemiesTotalAlive--;
+    }
+
+    private void OnEnemyMultiply(GameObject enemy, int numberToAdd)
+    {
+        if (enemiesAlive.ContainsKey(enemy))
+        {
+            enemiesAlive[enemy] += numberToAdd;
+        }
+        else
+        {
+            enemiesAlive[enemy] = numberToAdd;
+        }
+        enemiesTotalAlive += numberToAdd;
     }
 
     private String printEnemiesRemaining()
