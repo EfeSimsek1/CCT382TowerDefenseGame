@@ -45,6 +45,7 @@ public class TurretSelect : Interactable
                 previewModule.GetComponentInChildren<PreviewObject>().transparency = modulePreviewTransparency;
 
                 Destroy(previewModule.GetComponent<ShootingController>());
+                Destroy((MonoBehaviour)previewModule.GetComponentInChildren<IFiringModule>());
             }
             else
             {

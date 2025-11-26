@@ -2816,11 +2816,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   waves:
   - enemyAmounts:
-    - enemy: {fileID: 6864183603021173478, guid: c1cf84c788a5db44db390a1bb431c891, type: 3}
-      number: 1
     - enemy: {fileID: 6864183603021173478, guid: 100a602f03def554793bfed361837663, type: 3}
-      number: 1
-    enemiesSpawnedPerSecond: 1
+      number: 6
+    enemiesSpawnedPerSecond: 1.2
   waveIndicator: {fileID: 1217074086}
   timeBetweenWaves: 1
   moneyBetweenWaves: 10
@@ -4690,8 +4688,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deck:
-  - {fileID: 11400000, guid: 9125b7ab7221bc34d8c945657d2ed298, type: 2}
-  - {fileID: 11400000, guid: 9125b7ab7221bc34d8c945657d2ed298, type: 2}
+  - {fileID: 11400000, guid: 72e10ea6cbab81f46be0a05dd202423c, type: 2}
+  - {fileID: 11400000, guid: 72e10ea6cbab81f46be0a05dd202423c, type: 2}
   - {fileID: 11400000, guid: 8cfcd3f6ba455d442a0fc76f85c97eee, type: 2}
   - {fileID: 11400000, guid: 8cfcd3f6ba455d442a0fc76f85c97eee, type: 2}
 --- !u!1001 &1187469026

@@ -245,7 +245,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
+  m_Height: 3
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
@@ -280,6 +280,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   maxHealth: 5
   deathAnimTime: 0.5
+  killTrigger: 0
   damageWeaknesses: 
   deathClip: {fileID: 8300000, guid: be31997ce03f71b4e81c088ccc70614e, type: 3}
 --- !u!82 &8352802261071480051

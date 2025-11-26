@@ -11,7 +11,7 @@ public class EnemyHealth : MonoBehaviour
 
     [SerializeField] Card.DamageType[] damageWeaknesses;
 
-    private int currentHealth;
+    public int currentHealth;
     private EnemyBehaviour behaviour;
 
     private AudioSource audioSource;

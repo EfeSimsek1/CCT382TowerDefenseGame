@@ -281,7 +281,7 @@ MonoBehaviour:
   gunModuleSocket: {fileID: 5197091808067065175}
   startingGunModule: {fileID: 11400000, guid: 8a53b9feb9d0c364c943f359256975a3, type: 2}
   supportModuleLimit: 3
-  supportSlots: 0
+  supportSlotsFilled: 0
 --- !u!114 &7908122871127954978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -338,7 +338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50b8c0208033b5548a4aeb1b3d246387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OverheatSystem
-  heatPerShot: 25
+  heatPerShot: 1
   coolingPerSec: 5
   heatLimit: 100
   heatBar: {fileID: 3829366806809600078}

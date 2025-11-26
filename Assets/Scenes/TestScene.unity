@@ -768,10 +768,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: ExperimentalTurret
       objectReference: {fileID: 0}
+    - target: {fileID: 4423442261927268809, guid: c249e5d988e69d843a22b835149e041c, type: 3}
+      propertyPath: heatPerShot
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4472849558133530651, guid: c249e5d988e69d843a22b835149e041c, type: 3}
       propertyPath: startingGunModule
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: b331ff0dc9fbcba45aa8a97b7a88d4cd, type: 2}
     - target: {fileID: 5533668245181625373, guid: c249e5d988e69d843a22b835149e041c, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -781,7 +785,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4082431195294943011, guid: c249e5d988e69d843a22b835149e041c, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c249e5d988e69d843a22b835149e041c, type: 3}

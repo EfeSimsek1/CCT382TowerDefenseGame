@@ -61,7 +61,7 @@ public class ShootingController : MonoBehaviour
 
         LastShootTime = Time.time;
 
-        Debug.Log("Can fire: " + canFire);
+        //Debug.Log("Can fire: " + canFire);
     }
 
     public void Cool()

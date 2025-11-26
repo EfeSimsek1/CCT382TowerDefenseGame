@@ -279,9 +279,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ModuleController
   gunModuleSocket: {fileID: 5197091808067065175}
-  startingGunModule: {fileID: 11400000, guid: 8a53b9feb9d0c364c943f359256975a3, type: 2}
+  startingGunModule: {fileID: 11400000, guid: b331ff0dc9fbcba45aa8a97b7a88d4cd, type: 2}
   supportModuleLimit: 3
-  supportSlots: 0
+  supportSlotsFilled: 0
 --- !u!114 &7908122871127954978
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -230,7 +230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MachineGunModule
   muzzleFlashEffect: {fileID: 495128284469266066}
   impactEffect: {fileID: 7934396087084966990, guid: cff6ec26c2ce2344db1b02fbb11501ed, type: 3}
-  bulletTrail: {fileID: 6631602558284878617, guid: dfa1eb2fc5fff8a45bfdc46902d36f8b, type: 3}
+  bulletTrail: {fileID: 6631602558284878617, guid: 952bb472038753f4f9b2adda7df512ae, type: 3}
   bulletSpawnPoint: {fileID: 8109782920126227739}
   BulletSpeed: 100
 --- !u!1001 &297037033286769608
