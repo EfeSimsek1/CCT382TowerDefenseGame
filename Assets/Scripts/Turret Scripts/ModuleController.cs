@@ -87,7 +87,6 @@ public class ModuleController : MonoBehaviour
 
     public bool CanAddModule(Card card)
     {
-        Debug.Log((card.moduleType == Card.ModuleType.Firing && usingBaseGun) || (card.moduleType == Card.ModuleType.Support && (supportSlotsFilled < supportModuleLimit)));
         return (card.moduleType == Card.ModuleType.Firing && usingBaseGun) || (card.moduleType == Card.ModuleType.Support && (supportSlotsFilled < supportModuleLimit));
     }
 
