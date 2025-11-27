@@ -2402,6 +2402,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8cfcd3f6ba455d442a0fc76f85c97eee, type: 2}
   - {fileID: 11400000, guid: 8cfcd3f6ba455d442a0fc76f85c97eee, type: 2}
   - {fileID: 11400000, guid: 8cfcd3f6ba455d442a0fc76f85c97eee, type: 2}
+  - {fileID: 11400000, guid: 8cfcd3f6ba455d442a0fc76f85c97eee, type: 2}
+  - {fileID: 11400000, guid: cf61f77e8e8a0d0458bf7448e97e24e2, type: 2}
+  - {fileID: 11400000, guid: 72e10ea6cbab81f46be0a05dd202423c, type: 2}
+  - {fileID: 11400000, guid: b331ff0dc9fbcba45aa8a97b7a88d4cd, type: 2}
+  - {fileID: 11400000, guid: cf61f77e8e8a0d0458bf7448e97e24e2, type: 2}
 --- !u!224 &551062090
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3250,17 +3255,23 @@ MonoBehaviour:
   - enemyAmounts:
     - enemy: {fileID: 6864183603021173478, guid: 100a602f03def554793bfed361837663, type: 3}
       number: 5
-    enemiesSpawnedPerSecond: 0.5
+    enemiesSpawnedPerSecond: 1.5
   - enemyAmounts:
     - enemy: {fileID: 6864183603021173478, guid: 100a602f03def554793bfed361837663, type: 3}
-      number: 5
-    - enemy: {fileID: 6864183603021173478, guid: e5649734574786143b4970d6102462a3, type: 3}
-      number: 1
-    enemiesSpawnedPerSecond: 0.7
+      number: 7
+    enemiesSpawnedPerSecond: 1.5
   - enemyAmounts:
-    - enemy: {fileID: 1741049611956649905, guid: cc8e0a1322b617f468f73c18ec3324ee, type: 3}
-      number: 2
-    enemiesSpawnedPerSecond: 0.7
+    - enemy: {fileID: 6864183603021173478, guid: 100a602f03def554793bfed361837663, type: 3}
+      number: 13
+    enemiesSpawnedPerSecond: 1.5
+  - enemyAmounts:
+    - enemy: {fileID: 6864183603021173478, guid: 100a602f03def554793bfed361837663, type: 3}
+      number: 18
+    enemiesSpawnedPerSecond: 1.5
+  - enemyAmounts:
+    - enemy: {fileID: 6864183603021173478, guid: 38aec690dadcc224083c27ad49c39085, type: 3}
+      number: 3
+    enemiesSpawnedPerSecond: 1.5
   waveIndicator: {fileID: 1217074086}
   moneyBetweenWaves: 10
 --- !u!1001 &695558092

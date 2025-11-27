@@ -176,9 +176,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c499fc9f507476443aace8b36d830c4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
-  damageOnDeath: 20
-  speed: 2
+  damageOnDeath: 5
+  speed: 3
   moneyDroppedOnDeath: 1
+  agent: {fileID: 0}
   movementAudioClip: {fileID: 0}
   audioSource: {fileID: 0}
 --- !u!114 &7775997107955014424
@@ -193,8 +194,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c7c5d93aa511614caff74cbbed65c37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
-  maxHealth: 15
+  maxHealth: 5
   deathAnimTime: 0
   killTrigger: 0
   damageWeaknesses: 
+  currentHealth: 0
   deathClip: {fileID: 0}
