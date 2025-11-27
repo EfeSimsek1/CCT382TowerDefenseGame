@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Card
   cardName: Flamethrower
   cardSprite: {fileID: 0}
-  damage: 2
+  damage: 3
   cost: 20
   cardType: 1
   moduleModel: {fileID: 2440941003837750162, guid: 47b435b197deff24d9e0e09cce8337f5, type: 3}
