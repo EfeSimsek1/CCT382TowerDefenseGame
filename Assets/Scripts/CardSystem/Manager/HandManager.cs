@@ -13,6 +13,7 @@ public class HandManager : MonoBehaviour
     public List<GameObject> cardsInHand = new List<GameObject>();
     public int maxHandSize;
     public int currentHandSize;
+    public DiscardManager discardManager;
 
     private void Start()
     {
@@ -21,6 +22,12 @@ public class HandManager : MonoBehaviour
 
     public void AddCardToHand(Card cardData)
     {
+        if (currentHandSize >= maxHandSize)
+        {
+            discardManager.AddToDiscard(cardData);
+            return;
+        }
+
         GameObject newCard = Instantiate(cardPrefab, handTransform.position, Quaternion.identity, handTransform);
         cardsInHand.Insert(0, newCard);
 
@@ -45,6 +52,7 @@ public class HandManager : MonoBehaviour
         if (cardToRemove != null) 
         {
             cardsInHand.Remove(cardToRemove);
+            discardManager.AddToDiscard(cardToRemove.GetComponent<CardDisplay>().cardData);
             Destroy(cardToRemove);
         }
 

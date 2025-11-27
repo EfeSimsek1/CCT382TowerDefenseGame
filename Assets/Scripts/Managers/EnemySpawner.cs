@@ -29,7 +29,7 @@ public class EnemySpawner : MonoBehaviour
     private Dictionary<GameObject, int> enemiesLeftToSpawn = new Dictionary<GameObject, int>();
     private Dictionary<String, GameObject> nameToPrefab = new Dictionary<String, GameObject>();
     private bool isSpawning = false;
-    private bool waitingForNextWave = false;
+    public static bool waitingForNextWave = false;
 
     private void Awake()
     {
@@ -84,7 +84,6 @@ public class EnemySpawner : MonoBehaviour
 
         if (currentWave >= waves.Length)
         {
-            Debug.Log("wave ended!");
             SceneController.instance.NextLevel();
         }
 

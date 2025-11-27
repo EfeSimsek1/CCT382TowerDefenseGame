@@ -2960,7 +2960,6 @@ MonoBehaviour:
       number: 1
     enemiesSpawnedPerSecond: 0.5
   waveIndicator: {fileID: 1217074086}
-  timeBetweenWaves: 2
   moneyBetweenWaves: 10
 --- !u!1 &693331129
 GameObject:
@@ -4988,9 +4987,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.VisualScripting.Flow::Unity.VisualScripting.ScriptMachine
   _data:
-    _json: '{"nest":{"source":"Embed","macro":null,"embed":{"variables":{"Kind":"Flow","collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[],"controlOutputDefinitions":[],"valueInputDefinitions":[],"valueOutputDefinitions":[],"title":null,"summary":null,"pan":{"x":14.07599,"y":-8.694654},"zoom":1.0,"elements":[{"coroutine":false,"defaultValues":{"target":null},"position":{"x":-254.0,"y":-43.0},"guid":"30a11f6f-e4de-4356-9482-57538ae820d0","$version":"A","$type":"Unity.VisualScripting.OnButtonClick","$id":"10"},{"chainable":false,"parameterNames":["value"],"member":{"name":"SetActive","parameterTypes":["System.Boolean"],"targetType":"UnityEngine.GameObject","targetTypeName":"UnityEngine.GameObject","$version":"A"},"defaultValues":{"target":{"$content":0,"$type":"UnityEngine.Object"},"%value":{"$content":true,"$type":"System.Boolean"}},"position":{"x":-17.0,"y":-59.0},"guid":"63397624-b7d2-470e-9bae-51870e2301a3","$version":"A","$type":"Unity.VisualScripting.InvokeMember","$id":"12"},{"sourceUnit":{"$ref":"10"},"sourceKey":"trigger","destinationUnit":{"$ref":"12"},"destinationKey":"enter","guid":"59b4a5c2-6568-491e-80a4-d2ad1f5ed93f","$type":"Unity.VisualScripting.ControlConnection"}],"$version":"A"}}}'
-    _objectReferences:
-    - {fileID: 0}
+    _json: '{"nest":{"source":"Embed","macro":null,"embed":{"variables":{"Kind":"Flow","collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[],"controlOutputDefinitions":[],"valueInputDefinitions":[],"valueOutputDefinitions":[],"title":null,"summary":null,"pan":{"x":14.07599,"y":-8.694654},"zoom":1.0,"elements":[{"coroutine":false,"defaultValues":{"target":null},"position":{"x":-254.0,"y":-43.0},"guid":"30a11f6f-e4de-4356-9482-57538ae820d0","$version":"A","$type":"Unity.VisualScripting.OnButtonClick","$id":"10"},{"chainable":false,"parameterNames":["value"],"member":{"name":"SetActive","parameterTypes":["System.Boolean"],"targetType":"UnityEngine.GameObject","targetTypeName":"UnityEngine.GameObject","$version":"A"},"defaultValues":{"target":null,"%value":{"$content":true,"$type":"System.Boolean"}},"position":{"x":-17.0,"y":-59.0},"guid":"63397624-b7d2-470e-9bae-51870e2301a3","$version":"A","$type":"Unity.VisualScripting.InvokeMember","$id":"12"},{"sourceUnit":{"$ref":"10"},"sourceKey":"trigger","destinationUnit":{"$ref":"12"},"destinationKey":"enter","guid":"59b4a5c2-6568-491e-80a4-d2ad1f5ed93f","$type":"Unity.VisualScripting.ControlConnection"}],"$version":"A"}}}'
+    _objectReferences: []
 --- !u!114 &1033793716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8573,15 +8571,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aa946eb6cfa22946bfd1ea7643eddef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deckManager: {fileID: 1173656484}
   cardPrefab: {fileID: 1563359566472366892, guid: c558166ffce3e8c43b37132ed2a97357, type: 3}
   handTransform: {fileID: 619993697}
   fanSpread: -3
   cardSpacing: 150
   verticalSpacing: 29.7
   cardsInHand: []
-  maxHandSize: 0
+  maxHandSize: 4
   currentHandSize: 0
+  discardManager: {fileID: 1191329729}
 --- !u!1001 &1814327782
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -12,6 +12,6 @@ public class CreateCardPick : MonoBehaviour
         GameObject newCard = Instantiate(cardPrefab, transform.position, Quaternion.identity, transform);
 
         //Set the cardData of the Instantiated card
-        newCard.GetComponent<CardDisplay>().cardData = cardPool.cards[Random.Range(0, cardPool.cards.Count - 1)];
+        newCard.GetComponent<CardDisplay>().cardData = cardPool.cards[Random.Range(0, cardPool.cards.Count)];
     }
 }

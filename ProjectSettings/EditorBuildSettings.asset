@@ -9,14 +9,35 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: cbb875be2cac4904cb7c9a7154f2d323
   - enabled: 1
-    path: Assets/Scenes/Level 1.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
+    path: Assets/Scenes/level1.unity
+    guid: 8682778998957a3478ef87281b42e220
   - enabled: 1
     path: Assets/Scenes/Pick Card 1.unity
     guid: f9d365025aff6bb4999a9d76d2a6b5c2
   - enabled: 1
-    path: Assets/Scenes/Level 2.unity
-    guid: 8682778998957a3478ef87281b42e220
+    path: Assets/Scenes/level2.unity
+    guid: d57a87f6ffa1e8845bf451ab03193ce6
+  - enabled: 1
+    path: Assets/Scenes/Pick Card 2.unity
+    guid: 902c973f2392aba4bbceb9fec01670b5
+  - enabled: 1
+    path: Assets/Scenes/level3.unity
+    guid: f3debeddcd267504dbac379f3d21a481
+  - enabled: 1
+    path: Assets/Scenes/Pick Card 3.unity
+    guid: 7b277577a2079f741a197521c622d619
+  - enabled: 1
+    path: Assets/Scenes/level4.unity
+    guid: d839041cdaee4274db7f61e7e3efc823
+  - enabled: 1
+    path: Assets/Scenes/WinScreen.unity
+    guid: 17ea34d2afd698b4cb43f15e21561319
+  - enabled: 1
+    path: Assets/Scenes/AboutGame.unity
+    guid: d8522cc54c737e346bdefe3b87285cf2
+  - enabled: 1
+    path: Assets/Scenes/LoseScreen.unity
+    guid: da2d33cc1c2e19647bd4986f5096f4da
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

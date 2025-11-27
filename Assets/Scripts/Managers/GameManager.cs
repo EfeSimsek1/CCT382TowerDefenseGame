@@ -74,10 +74,7 @@ public class GameManager : MonoBehaviour
 
         if (currentPlayerHealth <= 0)
         {
-            // TODO: Add functionality for player losing that isn't just text appearing on screen
-
-            // Remove this line after implementing game over menu
-            gameOverText.gameObject.SetActive(true);
+            SceneController.instance.LoadScene("LoseScreen");
         }
     }
 
