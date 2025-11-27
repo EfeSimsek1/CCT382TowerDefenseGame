@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8631682230010828040}
   - component: {fileID: 7775997107955014424}
   m_Layer: 3
-  m_Name: Enemy 2
+  m_Name: T2-^SPD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -177,8 +177,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
   damageOnDeath: 20
-  speed: 2
+  speed: 4
   moneyDroppedOnDeath: 5
+  agent: {fileID: 0}
   movementAudioClip: {fileID: 0}
   audioSource: {fileID: 0}
 --- !u!114 &7775997107955014424
@@ -193,8 +194,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c7c5d93aa511614caff74cbbed65c37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
-  maxHealth: 20
+  maxHealth: 10
   deathAnimTime: 0
   killTrigger: 0
   damageWeaknesses: 
+  currentHealth: 0
   deathClip: {fileID: 0}
