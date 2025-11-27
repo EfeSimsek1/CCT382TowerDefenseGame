@@ -315,7 +315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 078a1cd6b88b28247bc71f8b1665eac2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gun
-  shootDelay: 0.7
+  shootDelay: 0.5
   mask:
     serializedVersion: 2
     m_Bits: 264
