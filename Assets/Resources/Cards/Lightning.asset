@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Card
   cardName: Lightning
   cardSprite: {fileID: 0}
-  cost: 0
+  damage: 1
+  cost: 25
   cardType: 1
   moduleModel: {fileID: 2440941003837750162, guid: abef8ba4194015f45801b8b40e15610a, type: 3}
   moduleType: 0
+  description: 

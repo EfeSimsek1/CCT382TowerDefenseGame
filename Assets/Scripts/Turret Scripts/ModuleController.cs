@@ -43,6 +43,8 @@ public class ModuleController : MonoBehaviour
 
                 GameObject module = Instantiate(card.moduleModel, gunModuleSocket.position, gunModuleSocket.rotation, gunModuleSocket);
 
+                GetComponent<ShootingController>().damage = card.damage;
+
                 //Debug.Log(module.name);
 
                 IFiringModule firingModule = module.GetComponentInChildren<IFiringModule>();

@@ -14,7 +14,7 @@ public class ShootingController : MonoBehaviour
 
     [Header("Damage attributes")]
     [SerializeField]
-    private int damage;
+    public int damage;
     [SerializeField]
     private Card.DamageType damageType;
 

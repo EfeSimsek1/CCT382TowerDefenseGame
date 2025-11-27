@@ -7,6 +7,7 @@ public class Card : ScriptableObject
 {
     public string cardName;
     public Sprite cardSprite;
+    public int damage;
     public int cost;
     public CardType cardType;
     public GameObject moduleModel;

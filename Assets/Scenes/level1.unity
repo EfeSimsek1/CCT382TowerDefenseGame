@@ -2400,13 +2400,6 @@ MonoBehaviour:
   deck:
   - {fileID: 11400000, guid: 8cfcd3f6ba455d442a0fc76f85c97eee, type: 2}
   - {fileID: 11400000, guid: 8cfcd3f6ba455d442a0fc76f85c97eee, type: 2}
-  - {fileID: 11400000, guid: 8cfcd3f6ba455d442a0fc76f85c97eee, type: 2}
-  - {fileID: 11400000, guid: 8cfcd3f6ba455d442a0fc76f85c97eee, type: 2}
-  - {fileID: 11400000, guid: 8cfcd3f6ba455d442a0fc76f85c97eee, type: 2}
-  - {fileID: 11400000, guid: 8cfcd3f6ba455d442a0fc76f85c97eee, type: 2}
-  - {fileID: 11400000, guid: 8cfcd3f6ba455d442a0fc76f85c97eee, type: 2}
-  - {fileID: 11400000, guid: 8cfcd3f6ba455d442a0fc76f85c97eee, type: 2}
-  - {fileID: 11400000, guid: 8cfcd3f6ba455d442a0fc76f85c97eee, type: 2}
 --- !u!224 &551062090
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3253,9 +3246,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   waves:
   - enemyAmounts:
+    - enemy: {fileID: 6864183603021173478, guid: 100a602f03def554793bfed361837663, type: 3}
+      number: 5
+    enemiesSpawnedPerSecond: 0.5
+  - enemyAmounts:
+    - enemy: {fileID: 6864183603021173478, guid: 100a602f03def554793bfed361837663, type: 3}
+      number: 5
     - enemy: {fileID: 6864183603021173478, guid: e5649734574786143b4970d6102462a3, type: 3}
       number: 1
-    enemiesSpawnedPerSecond: 0.5
+    enemiesSpawnedPerSecond: 0.7
   waveIndicator: {fileID: 1217074086}
   moneyBetweenWaves: 10
 --- !u!1001 &695558092
