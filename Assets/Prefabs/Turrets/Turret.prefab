@@ -300,8 +300,8 @@ MonoBehaviour:
   cloakedEnemyMask:
     serializedVersion: 2
     m_Bits: 256
-  targetRadius: 5
-  cloakedTargetRadius: 2
+  targetRadius: 3
+  cloakedTargetRadius: 1
   target: {fileID: 0}
 --- !u!114 &4515413779398263528
 MonoBehaviour:
