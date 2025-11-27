@@ -15,6 +15,8 @@ public class EnemyBehaviour : MonoBehaviour
 
     [SerializeField] private AudioClip movementAudioClip;
     [SerializeField] private AudioSource audioSource;
+    [SerializeField] private float distanceTraveled;
+    private float totalPathLength;
 
     private Coroutine playCoroutine;
 
@@ -22,11 +24,14 @@ public class EnemyBehaviour : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         agent.speed = speed;
+        agent.SetDestination(LevelManager.instance.endPoint.position);
+        distanceTraveled = 0f;
     }
 
     protected virtual void Update()
     {
-        agent.SetDestination(LevelManager.instance.endPoint.position);
+        float remaining = Mathf.Max(0f, agent.remainingDistance);
+        distanceTraveled = Mathf.Clamp(totalPathLength - remaining, 0f, totalPathLength);
 
         if (Vector3.Distance(transform.position, LevelManager.instance.endPoint.position) <= 1.2f)
         {
@@ -65,8 +70,17 @@ public class EnemyBehaviour : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
+    private float CalculatePathLength(NavMeshPath path)
     {
+        float length = 0f;
+        if (path == null || path.corners.Length < 2)
+            return 0f;
 
+        var corners = path.corners;
+        for (int i = 0; i < corners.Length - 1; i++)
+        {
+            length += Vector3.Distance(corners[i], corners[i + 1]);
+        }
+        return length;
     }
 }
