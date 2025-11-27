@@ -3007,6 +3007,12 @@ MonoBehaviour:
     - enemy: {fileID: 6864183603021173478, guid: e5649734574786143b4970d6102462a3, type: 3}
       number: 1
     enemiesSpawnedPerSecond: 0.5
+  - enemyAmounts:
+    - enemy: {fileID: 6864183603021173478, guid: e5649734574786143b4970d6102462a3, type: 3}
+      number: 3
+    - enemy: {fileID: 1584269240062416963, guid: 9bb2bb11e0cf189409e1209663ca3fb9, type: 3}
+      number: 2
+    enemiesSpawnedPerSecond: 0.5
   waveIndicator: {fileID: 1217074086}
   moneyBetweenWaves: 10
 --- !u!1001 &712485790
