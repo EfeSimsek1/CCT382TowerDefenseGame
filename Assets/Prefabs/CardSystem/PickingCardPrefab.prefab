@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 6272256733380985974}
   - component: {fileID: 67130247460170366}
   - component: {fileID: 1756146790736163005}
-  - component: {fileID: 5549409742786126934}
+  - component: {fileID: 8206988093559421706}
   m_Layer: 0
   m_Name: PickingCardPrefab
   m_TagString: Untagged
@@ -129,8 +129,6 @@ MonoBehaviour:
   cardData: {fileID: 0}
   cardImage: {fileID: 6088699895645567198}
   nameText: {fileID: 5444332811635510584}
-  healthText: {fileID: 6322725374188867267}
-  damageText: {fileID: 371546237157882231}
   costText: {fileID: 3733327560131376468}
   typeImages:
   - {fileID: 2871406127942080448}
@@ -183,7 +181,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.5, y: 3.5}
   m_EdgeRadius: 0
---- !u!114 &5549409742786126934
+--- !u!114 &8206988093559421706
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -192,23 +190,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1563359566472366892}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8e81880df3d8d84c92d64cfeb5872aa, type: 3}
+  m_Script: {fileID: 11500000, guid: e508d496548c41744834ee651ea9ac35, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
-  selectScale: 1.1
-  cardPlay: {x: 0, y: 400}
-  playPosition: {x: -800, y: 400, z: 0}
-  glowEffect: {fileID: 8104405780203536778}
-  playArrow: {fileID: 4549145372936354554}
-  lerpFactor: 0.1
-  cardPlayDivider: 4
-  cardPlayMultiplier: 1
-  needUpdateCardPlayPosition: 0
-  playPositionYDivider: 2
-  playPositionYMultiplier: 1
-  playPositionXDivider: 4
-  playPositionXMultiplier: -1.5
-  needUpdatePlayPosition: 1
+  m_EditorClassIdentifier: Assembly-CSharp::CardPick
 --- !u!1 &2193670647234837177
 GameObject:
   m_ObjectHideFlags: 0

@@ -84,6 +84,7 @@ public class EnemySpawner : MonoBehaviour
 
         if (currentWave >= waves.Length)
         {
+            Debug.Log("wave ended!");
             SceneController.instance.NextLevel();
         }
 
