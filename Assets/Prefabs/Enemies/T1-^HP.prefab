@@ -182,6 +182,7 @@ MonoBehaviour:
   agent: {fileID: 0}
   movementAudioClip: {fileID: 0}
   audioSource: {fileID: 0}
+  distanceTraveled: 0
 --- !u!114 &7775997107955014424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,7 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c7c5d93aa511614caff74cbbed65c37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
-  maxHealth: 20
+  maxHealth: 15
   deathAnimTime: 0
   killTrigger: 0
   damageWeaknesses: 
