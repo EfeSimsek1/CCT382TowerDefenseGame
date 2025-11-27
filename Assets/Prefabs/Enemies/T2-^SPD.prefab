@@ -71,7 +71,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 69be9306f57547c4f88ea94680b71291, type: 2}
+  - {fileID: 2100000, guid: 8183ff2f03bc0fc4ca7d51a9ee6883f0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -178,10 +178,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
   damageOnDeath: 20
   speed: 4
-  moneyDroppedOnDeath: 5
+  moneyDroppedOnDeath: 3
   agent: {fileID: 0}
   movementAudioClip: {fileID: 0}
   audioSource: {fileID: 0}
+  distanceTraveled: 0
 --- !u!114 &7775997107955014424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,7 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c7c5d93aa511614caff74cbbed65c37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
-  maxHealth: 10
+  maxHealth: 20
   deathAnimTime: 0
   killTrigger: 0
   damageWeaknesses: 

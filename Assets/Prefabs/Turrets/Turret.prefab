@@ -280,7 +280,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ModuleController
   gunModuleSocket: {fileID: 5197091808067065175}
   startingGunModule: {fileID: 11400000, guid: 8a53b9feb9d0c364c943f359256975a3, type: 2}
-  supportModuleLimit: 3
+  supportModuleLimit: 2
   supportSlotsFilled: 0
 --- !u!114 &7908122871127954978
 MonoBehaviour:
@@ -315,7 +315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 078a1cd6b88b28247bc71f8b1665eac2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gun
-  ShootDelay: 0.5
+  shootDelay: 0.7
   mask:
     serializedVersion: 2
     m_Bits: 264
