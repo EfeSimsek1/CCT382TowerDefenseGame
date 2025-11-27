@@ -4,6 +4,7 @@ public class TurretSelect : Interactable
 {
     [SerializeField] private GameObject rangeIndicator;
     [SerializeField] private GameObject selectIndicator;
+    [SerializeField] private GameObject moduleSlotsIndicator;
     [SerializeField] private float modulePreviewTransparency;
     [SerializeField] private GameObject previewModule;
     private float turretRadius;
@@ -34,6 +35,7 @@ public class TurretSelect : Interactable
         base.OnMouseEnterObj();
         rangeIndicator.SetActive(true);
         selectIndicator.SetActive(true);
+        moduleSlotsIndicator.SetActive(true);
 
         CardInteractionManager.cardReleasedTrigger = false;
 
@@ -61,6 +63,7 @@ public class TurretSelect : Interactable
         base.OnMouseExitObj();
         rangeIndicator.SetActive(false);
         selectIndicator.SetActive(false);
+        moduleSlotsIndicator.SetActive(false);
 
         // Destroy Module Preview
         Destroy(previewModule);

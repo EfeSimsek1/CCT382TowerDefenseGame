@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ModuleController : MonoBehaviour
 {
@@ -10,6 +11,15 @@ public class ModuleController : MonoBehaviour
     [Header("References")]
     [SerializeField]
     private Card startingGunModule;
+    [SerializeField]
+    private Sprite slotUnfilled;
+    [SerializeField]
+    private Sprite slotFilled;
+    [SerializeField]
+    private Image gunSlotUIImage;
+    [SerializeField]
+    private Image[] supportSlotUIImages;
+
 
     public List<Module> modules = new List<Module>();
     private Card gunModule;
@@ -20,6 +30,7 @@ public class ModuleController : MonoBehaviour
 
     private BoxCollider bc;
     ShootingController shootControl;
+
 
     void Start()
     {
@@ -74,13 +85,15 @@ public class ModuleController : MonoBehaviour
 
                 usingBaseGun = false;
 
+                gunSlotUIImage.sprite = slotFilled;
                 #endregion
             }
             else if(card.moduleType == Card.ModuleType.Support)
             {
                 //add support module
                 supportSlotsFilled++;
-                shootControl.shootDelay /= 2;
+                //shootControl.shootDelay /= 2;
+                supportSlotUIImages[supportSlotsFilled - 1].sprite = slotFilled;
             }
         }
     }
@@ -98,6 +111,7 @@ public class ModuleController : MonoBehaviour
             shootControl.firingModule = null;
             AddModule(startingGunModule);
             usingBaseGun = true;
+            gunSlotUIImage.sprite = slotUnfilled;
         }
         else if (supportSlotsFilled == 0)
         {
@@ -105,6 +119,8 @@ public class ModuleController : MonoBehaviour
         }
         else
         {
+            supportSlotUIImages[supportSlotsFilled - 1].sprite = slotFilled;
+
             // destroy support module
             supportSlotsFilled--;
         }
