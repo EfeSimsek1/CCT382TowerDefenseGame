@@ -866,7 +866,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DrawPileManager
   radialDrawBar: {fileID: 262860261}
   drawCount: {fileID: 240469915}
-  drawTime: 6
+  drawTime: 12
   lastTimeDrawn: 0
   startingHandSize: 4
 --- !u!1001 &223919430
@@ -2400,6 +2400,8 @@ MonoBehaviour:
   deck:
   - {fileID: 11400000, guid: 8cfcd3f6ba455d442a0fc76f85c97eee, type: 2}
   - {fileID: 11400000, guid: 8cfcd3f6ba455d442a0fc76f85c97eee, type: 2}
+  - {fileID: 11400000, guid: 8cfcd3f6ba455d442a0fc76f85c97eee, type: 2}
+  - {fileID: 11400000, guid: 8cfcd3f6ba455d442a0fc76f85c97eee, type: 2}
 --- !u!224 &551062090
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2748,7 +2750,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -400}
+  m_AnchoredPosition: {x: 0, y: -240}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &619993698
@@ -2767,8 +2769,8 @@ MonoBehaviour:
   widthDivider: 2
   heightDivider: 2
   widthMultiplier: 1
-  heightMultiplier: 0.27
-  updatePosition: 0
+  heightMultiplier: 0.4
+  updatePosition: 1
 --- !u!4 &629672869 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6840675201945219504, guid: 3aa5c2fcd4ffe974db70d954f44cf9f9, type: 3}
@@ -3254,6 +3256,10 @@ MonoBehaviour:
       number: 5
     - enemy: {fileID: 6864183603021173478, guid: e5649734574786143b4970d6102462a3, type: 3}
       number: 1
+    enemiesSpawnedPerSecond: 0.7
+  - enemyAmounts:
+    - enemy: {fileID: 1741049611956649905, guid: cc8e0a1322b617f468f73c18ec3324ee, type: 3}
+      number: 2
     enemiesSpawnedPerSecond: 0.7
   waveIndicator: {fileID: 1217074086}
   moneyBetweenWaves: 10
@@ -8966,9 +8972,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardPrefab: {fileID: 1563359566472366892, guid: c558166ffce3e8c43b37132ed2a97357, type: 3}
   handTransform: {fileID: 619993697}
-  fanSpread: -3
-  cardSpacing: 150
-  verticalSpacing: 29.7
+  fanSpread: 0
+  cardSpacing: 300
+  verticalSpacing: 0
   cardsInHand: []
   maxHandSize: 4
   currentHandSize: 0

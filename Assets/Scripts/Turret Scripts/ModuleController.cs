@@ -31,6 +31,7 @@ public class ModuleController : MonoBehaviour
             AddModule(startingGunModule);
         }
         usingBaseGun = true;
+        supportSlotsFilled = 0;
     }
 
     public void AddModule(Card card)
@@ -79,12 +80,14 @@ public class ModuleController : MonoBehaviour
             {
                 //add support module
                 supportSlotsFilled++;
+                shootControl.shootDelay /= 2;
             }
         }
     }
 
     public bool CanAddModule(Card card)
     {
+        Debug.Log((card.moduleType == Card.ModuleType.Firing && usingBaseGun) || (card.moduleType == Card.ModuleType.Support && (supportSlotsFilled < supportModuleLimit)));
         return (card.moduleType == Card.ModuleType.Firing && usingBaseGun) || (card.moduleType == Card.ModuleType.Support && (supportSlotsFilled < supportModuleLimit));
     }
 

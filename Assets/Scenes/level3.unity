@@ -613,7 +613,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DrawPileManager
   radialDrawBar: {fileID: 262860261}
   drawCount: {fileID: 240469915}
-  drawTime: 6
+  drawTime: 12
   lastTimeDrawn: 0
   startingHandSize: 4
 --- !u!1 &219097881
@@ -2337,8 +2337,8 @@ MonoBehaviour:
   widthDivider: 2
   heightDivider: 2
   widthMultiplier: 1
-  heightMultiplier: 0.27
-  updatePosition: 0
+  heightMultiplier: 0.4
+  updatePosition: 1
 --- !u!4 &629672869 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6840675201945219504, guid: 3aa5c2fcd4ffe974db70d954f44cf9f9, type: 3}
@@ -8573,9 +8573,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardPrefab: {fileID: 1563359566472366892, guid: c558166ffce3e8c43b37132ed2a97357, type: 3}
   handTransform: {fileID: 619993697}
-  fanSpread: -3
-  cardSpacing: 150
-  verticalSpacing: 29.7
+  fanSpread: 0
+  cardSpacing: 300
+  verticalSpacing: 0
   cardsInHand: []
   maxHandSize: 4
   currentHandSize: 0

@@ -9,6 +9,9 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private float deathAnimTime = 0.5f;
     public bool killTrigger;
 
+    [Header("References")]
+
+
     [SerializeField] Card.DamageType[] damageWeaknesses;
 
     public int currentHealth;

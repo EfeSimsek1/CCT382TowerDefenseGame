@@ -89,6 +89,11 @@ public class TurretSelect : Interactable
             // Add module to turret, but not the module model. Also destroy module preview
             Destroy(previewModule);
 
+            if (mc.CanAddModule(CardInteractionManager.LastHeldCard))
+            {
+                mc.AddModule(CardInteractionManager.LastHeldCard);
+            }
+
             CardInteractionManager.PlayCard(CardInteractionManager.LastHeldCard);
             CardInteractionManager.cardReleasedTrigger = false;
         }
