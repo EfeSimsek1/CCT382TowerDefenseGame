@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2526833378465085862}
   - component: {fileID: 8631682230010828040}
   - component: {fileID: 7775997107955014424}
+  - component: {fileID: 5333080222833702187}
   m_Layer: 3
   m_Name: T1-^HP
   m_TagString: Untagged
@@ -200,3 +201,15 @@ MonoBehaviour:
   damageWeaknesses: 
   currentHealth: 0
   deathClip: {fileID: 0}
+--- !u!114 &5333080222833702187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6864183603021173478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a63390b8956a704f89b557f18b1ac4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PathProgress
