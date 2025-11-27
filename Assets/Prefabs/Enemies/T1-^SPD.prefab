@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8631682230010828040}
   - component: {fileID: 7775997107955014424}
   m_Layer: 3
-  m_Name: Enemy
+  m_Name: T1-^SPD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
   damageOnDeath: 5
-  speed: 3
+  speed: 4
   moneyDroppedOnDeath: 1
   agent: {fileID: 0}
   movementAudioClip: {fileID: 0}
