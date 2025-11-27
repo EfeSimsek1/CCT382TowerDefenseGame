@@ -15,7 +15,7 @@ MonoBehaviour:
   cardName: Lightning
   cardSprite: {fileID: 0}
   damage: 1
-  cost: 25
+  cost: 20
   cardType: 1
   moduleModel: {fileID: 2440941003837750162, guid: abef8ba4194015f45801b8b40e15610a, type: 3}
   moduleType: 0
