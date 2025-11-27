@@ -59,7 +59,7 @@ public class EnemyHealth : MonoBehaviour
         }
         gameObject.layer = LayerMask.NameToLayer("Default");
 
-        behaviour.enabled = false;
+        if (behaviour != null) behaviour.enabled = false;
         //GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
         //Destroy(GetComponent<Collider>());
         GetComponent<Collider>().enabled = false;

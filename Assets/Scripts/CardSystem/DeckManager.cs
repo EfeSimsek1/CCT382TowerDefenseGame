@@ -8,10 +8,6 @@ public class DeckManager : MonoBehaviour
 
     private void Awake()
     {
-    }
-
-    public void DrawCard(HandManager handManager)
-    {
 
     }
 

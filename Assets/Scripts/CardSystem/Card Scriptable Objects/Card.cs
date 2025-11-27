@@ -11,6 +11,7 @@ public class Card : ScriptableObject
     public CardType cardType;
     public GameObject moduleModel;
     public ModuleType moduleType;
+    public string description;
 
     public enum CardType
     {
