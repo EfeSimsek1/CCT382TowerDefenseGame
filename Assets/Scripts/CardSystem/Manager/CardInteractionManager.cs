@@ -53,7 +53,6 @@ public class CardInteractionManager : MonoBehaviour
 
     public static void PlayCard(Card card)
     {
-        discardManager.AddToDiscard(card);
         handManager.DiscardCard(card);
         GameManager.onLoseMoney.Invoke(card.cost);
         //PlayAudioClip(shootingAudioClip);

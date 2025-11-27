@@ -90,4 +90,9 @@ public class JumperBehaviour : EnemyBehaviour
     {
         victimTurret.GetComponent<ModuleController>().DamageTurret();
     }
+
+    private void OnDestroy()
+    {
+        EnemySpawner.onEnemyDestroy.Invoke(gameObject);
+    }
 }

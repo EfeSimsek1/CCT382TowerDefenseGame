@@ -32,6 +32,8 @@ public class DrawPileManager : MonoBehaviour
 
     private void Update()
     {
+        if (EnemySpawner.waitingForNextWave) return;
+
         if (lastTimeDrawn + drawTime < Time.time)
         {
             DrawCard(handManager);
