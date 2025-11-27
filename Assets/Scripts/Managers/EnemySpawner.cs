@@ -15,7 +15,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] TextMeshProUGUI waveIndicator;
 
     [Header("Attributes")]
-    [SerializeField] private float timeBetweenWaves = 5f;
+    //[SerializeField] private float timeBetweenWaves = 5f;
     [SerializeField] private int moneyBetweenWaves = 10;
 
     [Header("Events")]
@@ -64,7 +64,7 @@ public class EnemySpawner : MonoBehaviour
             }
         }
 
-        waveIndicator.text = $"Wave: {currentWave + 1}, Enemies Left: \n {printEnemiesRemaining()}";
+        waveIndicator.text = $"Wave: {currentWave + 1}";
     }
     private void StartWave()
     {
@@ -81,6 +81,12 @@ public class EnemySpawner : MonoBehaviour
         isSpawning = false;
         timeSinceLastSpawn = 0f;
         currentWave++;
+
+        if (currentWave >= waves.Length)
+        {
+            Debug.Log("wave ended!");
+            SceneController.instance.NextLevel();
+        }
 
         waitingForNextWave = true;
 
