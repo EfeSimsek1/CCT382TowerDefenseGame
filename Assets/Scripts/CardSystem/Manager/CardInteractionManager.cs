@@ -14,7 +14,6 @@ public class CardInteractionManager : MonoBehaviour
     public static bool cardReleasedTrigger;
 
     private static HandManager handManager;
-    private static DeckManager deckManager;
     private static DiscardManager discardManager;
 
     [Header("Audio")]
@@ -29,7 +28,6 @@ public class CardInteractionManager : MonoBehaviour
     private void Start()
     {
         handManager = FindFirstObjectByType<HandManager>();
-        deckManager = FindFirstObjectByType<DeckManager>();
         discardManager = FindFirstObjectByType<DiscardManager>();
         audioSource = GetComponent<AudioSource>();
     }
@@ -46,7 +44,6 @@ public class CardInteractionManager : MonoBehaviour
         lastHeldCard = heldCard;
         heldCard = null;
         cardReleasedTrigger = true;
-        //handManager.UpdateHandVisuals();
     }
 
     public static bool IsCardHeld()
