@@ -2400,8 +2400,6 @@ MonoBehaviour:
   deck:
   - {fileID: 11400000, guid: 8cfcd3f6ba455d442a0fc76f85c97eee, type: 2}
   - {fileID: 11400000, guid: 8cfcd3f6ba455d442a0fc76f85c97eee, type: 2}
-  - {fileID: 11400000, guid: 2b315861513231b4c82bf5594dadceb2, type: 2}
-  - {fileID: 11400000, guid: 2b315861513231b4c82bf5594dadceb2, type: 2}
 --- !u!224 &551062090
 RectTransform:
   m_ObjectHideFlags: 0

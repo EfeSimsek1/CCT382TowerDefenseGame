@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1679033022662972095}
   m_Layer: 0
-  m_Name: IceGun
+  m_Name: IceGunRoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,7 +79,7 @@ GameObject:
   - component: {fileID: 8205883432741415783}
   - component: {fileID: 5047444006373563447}
   m_Layer: 0
-  m_Name: TestGunModule
+  m_Name: IceGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

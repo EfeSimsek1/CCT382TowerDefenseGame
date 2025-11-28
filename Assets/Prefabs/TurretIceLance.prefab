@@ -4844,8 +4844,9 @@ GameObject:
   - component: {fileID: 4897860267909952}
   - component: {fileID: 198433943929519872}
   - component: {fileID: 199651061282982800}
+  - component: {fileID: 2082735520070175146}
   m_Layer: 0
-  m_Name: IceLance
+  m_Name: TurretIceLance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8639,7 +8640,7 @@ ParticleSystem:
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
-    collisionMessages: 0
+    collisionMessages: 1
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:
@@ -9696,6 +9697,18 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &2082735520070175146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1820680284854294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8040726972d3ac84c99734c988b1a616, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ParticleTrigger
 --- !u!1 &1877868098342330
 GameObject:
   m_ObjectHideFlags: 0
