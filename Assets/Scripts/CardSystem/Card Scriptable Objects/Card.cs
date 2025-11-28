@@ -2,16 +2,12 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Card", menuName = "Card")]
 public class Card : ScriptableObject
 {
     public string cardName;
     public Sprite cardSprite;
-    public int damage;
     public int cost;
     public CardType cardType;
-    public GameObject moduleModel;
-    public ModuleType moduleType;
     public string description;
 
     public enum CardType

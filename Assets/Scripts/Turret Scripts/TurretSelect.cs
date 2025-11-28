@@ -39,11 +39,14 @@ public class TurretSelect : Interactable
 
         CardInteractionManager.cardReleasedTrigger = false;
 
-        if (CardInteractionManager.IsCardHeld() && CardInteractionManager.HeldCard.cardType == Card.CardType.Module && CardInteractionManager.LastHeldCard.moduleModel != null)
+        Card lastCard = CardInteractionManager.LastHeldCard;
+        Card heldCard = CardInteractionManager.HeldCard;
+
+        if (CardInteractionManager.IsCardHeld() && heldCard.cardType == Card.CardType.Module && ((ModuleCard)lastCard).moduleModel != null)
         {
-            if (mc.CanAddModule(CardInteractionManager.HeldCard))
+            if (mc.CanAddModule((ModuleCard)heldCard))
             {
-                previewModule = Instantiate(CardInteractionManager.HeldCard.moduleModel, mc.gunModuleSocket.position, mc.gunModuleSocket.rotation, mc.gunModuleSocket);
+                previewModule = Instantiate(((ModuleCard)heldCard).moduleModel, mc.gunModuleSocket.position, mc.gunModuleSocket.rotation, mc.gunModuleSocket);
                 previewModule.GetComponentInChildren<PreviewObject>().transparency = modulePreviewTransparency;
 
                 Destroy(previewModule.GetComponent<ShootingController>());
@@ -75,12 +78,12 @@ public class TurretSelect : Interactable
 
         Card lastCard = CardInteractionManager.LastHeldCard;
 
-        if (CardInteractionManager.cardReleasedTrigger && lastCard.cardType == Card.CardType.Module && lastCard.moduleModel != null && CardInteractionManager.CanAffordCard(lastCard))
+        if (CardInteractionManager.cardReleasedTrigger && lastCard.cardType == Card.CardType.Module && ((ModuleCard)lastCard).moduleModel != null && CardInteractionManager.CanAffordCard(lastCard))
         {
             // Add module to turret, and add module model. Also destroy module preview
             Destroy(previewModule);
 
-            if (mc.CanAddModule(CardInteractionManager.LastHeldCard))
+            if (mc.CanAddModule((ModuleCard)CardInteractionManager.LastHeldCard))
             {
                 mc.AddModule(CardInteractionManager.LastHeldCard);
             }
@@ -92,7 +95,7 @@ public class TurretSelect : Interactable
             // Add module to turret, but not the module model. Also destroy module preview
             Destroy(previewModule);
 
-            if (mc.CanAddModule(CardInteractionManager.LastHeldCard))
+            if (mc.CanAddModule((ModuleCard)CardInteractionManager.LastHeldCard))
             {
                 mc.AddModule(CardInteractionManager.LastHeldCard);
             }

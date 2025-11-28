@@ -355,7 +355,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ModuleController
   gunModuleSocket: {fileID: 5197091808067065175}
-  startingGunModule: {fileID: 11400000, guid: 8a53b9feb9d0c364c943f359256975a3, type: 2}
+  startingGunModule: {fileID: 11400000, guid: 07d08984765ee2742a76ee161e9387c4, type: 2}
   slotUnfilled: {fileID: 1650436098, guid: 05e0567213a58c840a3ea79a4409bdfd, type: 3}
   slotFilled: {fileID: -1696923503, guid: 05e0567213a58c840a3ea79a4409bdfd, type: 3}
   gunSlotUIImage: {fileID: 7513004511713574765}

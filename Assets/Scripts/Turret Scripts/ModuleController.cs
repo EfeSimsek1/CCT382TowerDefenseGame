@@ -30,6 +30,7 @@ public class ModuleController : MonoBehaviour
 
     private BoxCollider bc;
     ShootingController shootControl;
+    TurretAim turretAim;
 
 
     void Start()
@@ -37,6 +38,7 @@ public class ModuleController : MonoBehaviour
         modules = new List<Module>();
         bc = GetComponent<BoxCollider>();
         shootControl = GetComponent<ShootingController>();
+        turretAim = GetComponent<TurretAim>();
         if (startingGunModule)
         {
             AddModule(startingGunModule);
@@ -49,13 +51,13 @@ public class ModuleController : MonoBehaviour
     {
         if (card.cardType == Card.CardType.Module)
         {
-            if (card.moduleType == Card.ModuleType.Firing && shootControl.firingModule == null)
+            if (((ModuleCard)card).moduleType == Card.ModuleType.Firing && shootControl.firingModule == null)
             {
                 #region Add starting module
 
-                GameObject module = Instantiate(card.moduleModel, gunModuleSocket.position, gunModuleSocket.rotation, gunModuleSocket);
+                GameObject module = Instantiate(((ModuleCard)card).moduleModel, gunModuleSocket.position, gunModuleSocket.rotation, gunModuleSocket);
 
-                GetComponent<ShootingController>().damage = card.damage;
+                GetComponent<ShootingController>().damage = ((GunModuleCard)card).damagePerShot;
 
                 //Debug.Log(module.name);
 
@@ -68,11 +70,11 @@ public class ModuleController : MonoBehaviour
 
                 #endregion
             }
-            else if(card.moduleType == Card.ModuleType.Firing && usingBaseGun) 
+            else if(((ModuleCard)card).moduleType == Card.ModuleType.Firing && usingBaseGun) 
             {
                 #region replace starting module
 
-                GameObject module = Instantiate(card.moduleModel, gunModuleSocket.position, gunModuleSocket.rotation, gunModuleSocket);
+                GameObject module = Instantiate(((ModuleCard)card).moduleModel, gunModuleSocket.position, gunModuleSocket.rotation, gunModuleSocket);
 
                 IFiringModule firingModule = module.GetComponentInChildren<IFiringModule>();
 
@@ -88,17 +90,18 @@ public class ModuleController : MonoBehaviour
                 gunSlotUIImage.sprite = slotFilled;
                 #endregion
             }
-            else if(card.moduleType == Card.ModuleType.Support)
+            else if(((ModuleCard)card).moduleType == Card.ModuleType.Support)
             {
                 //add support module
                 supportSlotsFilled++;
-                //shootControl.shootDelay /= 2;
+                ((SupportModuleCard)card).Activate(shootControl, turretAim);
+                Debug.Log(shootControl.shootDelay);
                 supportSlotUIImages[supportSlotsFilled - 1].sprite = slotFilled;
             }
         }
     }
 
-    public bool CanAddModule(Card card)
+    public bool CanAddModule(ModuleCard card)
     {
         return (card.moduleType == Card.ModuleType.Firing && usingBaseGun) || (card.moduleType == Card.ModuleType.Support && (supportSlotsFilled < supportModuleLimit));
     }

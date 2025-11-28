@@ -9,14 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0aa3f8735d5b62443a3b31d5674d33ea, type: 3}
-  m_Name: StartingGunModule
-  m_EditorClassIdentifier: Assembly-CSharp::Card
+  m_Script: {fileID: 11500000, guid: 83f1ccf777dc5874a86543acf6b960a3, type: 3}
+  m_Name: StartingGun
+  m_EditorClassIdentifier: Assembly-CSharp::GunModuleCard
   cardName: StartingGunModule
   cardSprite: {fileID: 0}
   damage: 1
   cost: 0
   cardType: 1
+  description: 
   moduleModel: {fileID: 2440941003837750162, guid: 44a6de557bb6ebf438a1e6feddcedf6c, type: 3}
   moduleType: 0
-  description: 
+  damagePerShot: 1
+  damageTypes: 
