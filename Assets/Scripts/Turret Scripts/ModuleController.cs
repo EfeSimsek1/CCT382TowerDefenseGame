@@ -31,6 +31,7 @@ public class ModuleController : MonoBehaviour
     private BoxCollider bc;
     ShootingController shootControl;
     TurretAim turretAim;
+    OverheatSystem overheatSystem;
 
 
     void Start()
@@ -39,6 +40,7 @@ public class ModuleController : MonoBehaviour
         bc = GetComponent<BoxCollider>();
         shootControl = GetComponent<ShootingController>();
         turretAim = GetComponent<TurretAim>();
+        overheatSystem = GetComponent<OverheatSystem>();
         if (startingGunModule)
         {
             AddModule(startingGunModule);
@@ -94,8 +96,8 @@ public class ModuleController : MonoBehaviour
             {
                 //add support module
                 supportSlotsFilled++;
-                ((SupportModuleCard)card).Activate(shootControl, turretAim);
-                Debug.Log(shootControl.shootDelay);
+                ((SupportModuleCard)card).Activate(shootControl, turretAim, overheatSystem);
+                Debug.Log(turretAim.targetRadius);
                 supportSlotUIImages[supportSlotsFilled - 1].sprite = slotFilled;
             }
         }

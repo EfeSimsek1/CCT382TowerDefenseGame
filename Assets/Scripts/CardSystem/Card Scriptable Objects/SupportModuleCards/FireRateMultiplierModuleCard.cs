@@ -5,12 +5,12 @@ public class FireRateMultiplierModuleCard : SupportModuleCard
 {
     public float multiplier;
 
-    public override void Activate(ShootingController controller, TurretAim turretAim)
+    public override void Activate(ShootingController controller, TurretAim turretAim, OverheatSystem overheatSystem)
     {
         controller.shootDelay /= multiplier;
     }
 
-    public override void DestroyModule(ShootingController controller, TurretAim turretAim)
+    public override void DestroyModule(ShootingController controller, TurretAim turretAim, OverheatSystem overheatSystem)
     {
         controller.shootDelay *= multiplier;
     }

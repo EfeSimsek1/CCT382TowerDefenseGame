@@ -7,14 +7,14 @@ public class TurretSelect : Interactable
     [SerializeField] private GameObject moduleSlotsIndicator;
     [SerializeField] private float modulePreviewTransparency;
     [SerializeField] private GameObject previewModule;
-    private float turretRadius;
     private ModuleController mc;
     private BoxCollider bc;
+    private TurretAim ta;
 
     void Start()
     {
-        turretRadius = GetComponent<TurretAim>().targetRadius;
         rangeIndicator.SetActive(false);
+        ta = GetComponent<TurretAim>();
         mc = GetComponent<ModuleController>();
         bc = GetComponent<BoxCollider>();
     }
@@ -22,7 +22,7 @@ public class TurretSelect : Interactable
     void Update()
     {
         rangeIndicator.transform.SetPositionAndRotation(transform.position, Quaternion.identity);
-        rangeIndicator.transform.localScale = new Vector3(turretRadius, rangeIndicator.transform.localScale.y, turretRadius);
+        rangeIndicator.transform.localScale = new Vector3(ta.targetRadius, rangeIndicator.transform.localScale.y, ta.targetRadius);
     }
 
     public override void OnMouseDownObj()
