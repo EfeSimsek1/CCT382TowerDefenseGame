@@ -9,14 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0aa3f8735d5b62443a3b31d5674d33ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 83f1ccf777dc5874a86543acf6b960a3, type: 3}
   m_Name: Lightning
-  m_EditorClassIdentifier: Assembly-CSharp::Card
-  cardName: Lightning
+  m_EditorClassIdentifier: Assembly-CSharp::GunModuleCard
+  cardName: Chain Lightning
   cardSprite: {fileID: 0}
-  damage: 1
-  cost: 50
+  cost: 20
   cardType: 1
+  description: 
   moduleModel: {fileID: 2440941003837750162, guid: abef8ba4194015f45801b8b40e15610a, type: 3}
   moduleType: 0
-  description: 
+  damagePerShot: 1
+  damageTypes: 

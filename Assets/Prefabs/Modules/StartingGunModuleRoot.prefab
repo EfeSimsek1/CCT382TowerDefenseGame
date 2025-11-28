@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1679033022662972095}
   m_Layer: 0
-  m_Name: TestGunModuleRoot
+  m_Name: StartingGunModuleRoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
