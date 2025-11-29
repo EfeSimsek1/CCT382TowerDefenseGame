@@ -2010,7 +2010,7 @@ MonoBehaviour:
     m_Bits: 192
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
 --- !u!1 &532030295
 GameObject:
   m_ObjectHideFlags: 0
@@ -9821,7 +9821,7 @@ GameObject:
   - component: {fileID: 1988150546}
   - component: {fileID: 1988150545}
   - component: {fileID: 1988150549}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
