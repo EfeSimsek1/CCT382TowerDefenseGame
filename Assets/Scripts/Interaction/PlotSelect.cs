@@ -60,4 +60,71 @@ public class PlotSelect : Interactable
             CardInteractionManager.cardReleasedTrigger = false;
         }
     }
+
+    private GameObject edgeIndicator;
+
+    private void Update()
+    {
+        CreateEdgeIndicator();
+    }
+
+    private void CreateEdgeIndicator()
+    {
+        if (bc == null) bc = GetComponent<BoxCollider>();
+
+        // reuse existing indicator if present
+        if (edgeIndicator == null)
+        {
+            edgeIndicator = new GameObject("PlotEdgeIndicator");
+            edgeIndicator.transform.SetParent(transform, true);
+            edgeIndicator.layer = 0;
+            edgeIndicator.AddComponent<LineRenderer>();
+        }
+
+        LineRenderer lr = edgeIndicator.GetComponent<LineRenderer>();
+        lr.useWorldSpace = true;
+        lr.loop = true;
+        lr.positionCount = 4;
+        lr.numCornerVertices = 8;
+        lr.numCapVertices = 8;
+
+        // compute square corners at the top surface of the box collider
+        Vector3 center = bc.bounds.center;
+        Vector3 ext = bc.bounds.extents;
+        float y = center.y + ext.y + 0.01f; // slightly above the surface to avoid z-fighting
+
+        // inset the indicator so the lines are inside the plot
+        float insetFraction = 0.10f; // 10% inset from each side
+        float insetX = ext.x * insetFraction;
+        float insetZ = ext.z * insetFraction;
+        float innerExtX = Mathf.Max(0.01f, ext.x - insetX);
+        float innerExtZ = Mathf.Max(0.01f, ext.z - insetZ);
+
+        Vector3[] corners = new Vector3[4]
+        {
+            new Vector3(center.x - innerExtX, y, center.z - innerExtZ),
+            new Vector3(center.x - innerExtX, y, center.z + innerExtZ),
+            new Vector3(center.x + innerExtX, y, center.z + innerExtZ),
+            new Vector3(center.x + innerExtX, y, center.z - innerExtZ)
+        };
+        lr.SetPositions(corners);
+
+        // make the line thicker (scale with plot size but clamp to reasonable min/max)
+        float width = Mathf.Max(innerExtX, innerExtZ) * 0.16f; // larger multiplier for thicker lines
+        lr.startWidth = lr.endWidth = Mathf.Clamp(width, 0.03f, 0.25f);
+
+        Color col = new Color(0f, 1f, 0f, Mathf.Clamp01(turretPreviewTransparency)); // greenish with preview alpha
+
+        // reuse material if present otherwise create a simple one
+        if (lr.material == null || lr.material.shader == null || lr.material.shader.name != "Unlit/Color")
+        {
+            lr.material = new Material(Shader.Find("Unlit/Color"));
+        }
+        lr.material.color = col;
+
+        lr.startColor = lr.endColor = col;
+        lr.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+        lr.receiveShadows = false;
+    }
+    
 }
