@@ -68,6 +68,88 @@ public class PlotSelect : Interactable
         CreateEdgeIndicator();
     }
 
+    [SerializeField] private bool showSceneWidget = true;
+    [SerializeField] private Color sceneWidgetColor = new Color(0f, 1f, 0f, 0.6f);
+    [SerializeField, Range(0.01f, 0.25f)] private float sceneWidgetInsetFraction = 0.10f;
+    [SerializeField, Range(1f, 8f)] private float sceneWidgetLinePixels = 3f;
+
+    private void OnDrawGizmos()
+    {
+        if (!showSceneWidget) return;
+        if (bc == null) bc = GetComponent<BoxCollider>();
+        if (bc == null) return;
+
+        Vector3 center = bc.bounds.center;
+        Vector3 ext = bc.bounds.extents;
+        float y = center.y + ext.y + 0.01f; // slightly above surface
+
+        float insetX = ext.x * sceneWidgetInsetFraction;
+        float insetZ = ext.z * sceneWidgetInsetFraction;
+        float innerExtX = Mathf.Max(0.01f, ext.x - insetX);
+        float innerExtZ = Mathf.Max(0.01f, ext.z - insetZ);
+
+        Vector3[] corners = new Vector3[5]
+        {
+            new Vector3(center.x - innerExtX, y, center.z - innerExtZ),
+            new Vector3(center.x - innerExtX, y, center.z + innerExtZ),
+            new Vector3(center.x + innerExtX, y, center.z + innerExtZ),
+            new Vector3(center.x + innerExtX, y, center.z - innerExtZ),
+            new Vector3(center.x - innerExtX, y, center.z - innerExtZ) // close loop
+        };
+
+        // filled thin quad (semi-transparent)
+        Color prevGiz = Gizmos.color;
+        Gizmos.color = new Color(sceneWidgetColor.r, sceneWidgetColor.g, sceneWidgetColor.b, sceneWidgetColor.a * 0.22f);
+        Vector3 fillCenter = new Vector3(center.x, y, center.z);
+        Vector3 fillSize = new Vector3(innerExtX * 2f, 0.01f, innerExtZ * 2f);
+        Gizmos.DrawCube(fillCenter, fillSize);
+        Gizmos.color = prevGiz;
+
+        // outline using Gizmos (always visible in Scene view). For a crisper, always-on-top outline use editor Handles below.
+        prevGiz = Gizmos.color;
+        Gizmos.color = sceneWidgetColor;
+        for (int i = 0; i < corners.Length - 1; i++)
+            Gizmos.DrawLine(corners[i], corners[i + 1]);
+        Gizmos.color = prevGiz;
+    }
+
+    #if UNITY_EDITOR
+    private void OnDrawGizmosSelected()
+    {
+        // Also draw an always-on-top thicker line using Handles so it shows through scene geometry.
+        if (!showSceneWidget) return;
+        if (bc == null) bc = GetComponent<BoxCollider>();
+        if (bc == null) return;
+
+        Vector3 center = bc.bounds.center;
+        Vector3 ext = bc.bounds.extents;
+        float y = center.y + ext.y + 0.01f;
+
+        float insetX = ext.x * sceneWidgetInsetFraction;
+        float insetZ = ext.z * sceneWidgetInsetFraction;
+        float innerExtX = Mathf.Max(0.01f, ext.x - insetX);
+        float innerExtZ = Mathf.Max(0.01f, ext.z - insetZ);
+
+        Vector3[] corners = new Vector3[5]
+        {
+            new Vector3(center.x - innerExtX, y, center.z - innerExtZ),
+            new Vector3(center.x - innerExtX, y, center.z + innerExtZ),
+            new Vector3(center.x + innerExtX, y, center.z + innerExtZ),
+            new Vector3(center.x + innerExtX, y, center.z - innerExtZ),
+            new Vector3(center.x - innerExtX, y, center.z - innerExtZ)
+        };
+
+        // draw always-on-top (ignore depth) thick line
+        var prevZ = UnityEditor.Handles.zTest;
+        UnityEditor.Handles.zTest = UnityEngine.Rendering.CompareFunction.Always;
+        var prevColor = UnityEditor.Handles.color;
+        UnityEditor.Handles.color = sceneWidgetColor;
+        UnityEditor.Handles.DrawAAPolyLine(sceneWidgetLinePixels, corners);
+        UnityEditor.Handles.color = prevColor;
+        UnityEditor.Handles.zTest = prevZ;
+    }
+    #endif
+
     private void CreateEdgeIndicator()
     {
         if (bc == null) bc = GetComponent<BoxCollider>();
