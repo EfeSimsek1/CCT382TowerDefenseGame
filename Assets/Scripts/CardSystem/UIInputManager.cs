@@ -6,7 +6,10 @@ public class UIInputManager : MonoBehaviour
 {
     [SerializeField] private Camera mainCamera;
     [SerializeField] private LayerMask interactable;
+    [SerializeField] private LayerMask groundLayer;
     private Interactable currentHoveredObject;
+    private Interactable ground;
+    public static Vector3 groundPos;
 
     void Awake()
     {
@@ -19,6 +22,7 @@ public class UIInputManager : MonoBehaviour
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
+        #region Non-ground interaction
 
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, interactable) && hit.collider.gameObject.GetComponent<Interactable>() != null)
         {
@@ -56,5 +60,33 @@ public class UIInputManager : MonoBehaviour
         {
             currentHoveredObject.OnMouseUpObj();
         }
+
+        #endregion
+
+        #region Ground interaction
+
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, groundLayer) && hit.collider.gameObject.GetComponent<Interactable>() != null)
+        {
+            ground = hit.collider.gameObject.GetComponent<Interactable>();
+            ground.OnMouseHoverObj();
+            groundPos = hit.point;
+        }
+        else if(ground != null)
+        {
+            ground.OnMouseExitObj();
+            ground = null;
+        }
+
+        #endregion
+
+        if (Input.GetMouseButtonDown(0) && ground)
+        {
+            ground.OnMouseDownObj();
+        }
+        else if (Input.GetMouseButtonUp(0) && ground)
+        {
+            ground.OnMouseUpObj();
+        }
+
     }
 }

@@ -13,7 +13,8 @@ public class Card : ScriptableObject
     public enum CardType
     {
         Turret,
-        Module
+        Module,
+        Ability
     }
 
     public enum DamageType
@@ -29,5 +30,10 @@ public class Card : ScriptableObject
     {
         Firing,
         Support
+    }
+
+    public enum AbilityType
+    {
+        AOE
     }
 }
