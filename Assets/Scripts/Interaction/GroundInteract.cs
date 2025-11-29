@@ -2,10 +2,12 @@ using UnityEngine;
 
 public class GroundInteract : Interactable
 {
-    [SerializeField] private GameObject abilityRangeIndicator;
+    [SerializeField] private GameObject abilityRangeIndicatorPrefab;
+    private GameObject abilityRangeIndicator;
 
     void Start()
     {
+        abilityRangeIndicator = Instantiate(abilityRangeIndicatorPrefab);
         abilityRangeIndicator.SetActive(false);
     }
 
