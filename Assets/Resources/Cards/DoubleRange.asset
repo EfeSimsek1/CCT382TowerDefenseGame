@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ccd0eca4d33f1944b57e9d42e73c93c, type: 3}
   m_Name: DoubleRange
   m_EditorClassIdentifier: Assembly-CSharp::RangeMultiplierCard
-  cardName: 2x Range
+  cardName: Increased Range
   cardSprite: {fileID: 0}
   cost: 0
   cardType: 1
   description: 
   moduleModel: {fileID: 0}
   moduleType: 1
-  multiplier: 2
+  multiplier: 1.5
