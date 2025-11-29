@@ -65,14 +65,23 @@ public class UIInputManager : MonoBehaviour
 
         #region Ground interaction
 
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity, groundLayer) && hit.collider.gameObject.GetComponent<Interactable>() != null)
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, groundLayer) && ground == null && hit.collider.gameObject.GetComponent<Interactable>() != null)
         {
+            // Mouse enters map
+            ground = hit.collider.gameObject.GetComponent<Interactable>();
+            ground.OnMouseEnterObj();
+            groundPos = hit.point;
+        }
+        else if(Physics.Raycast(ray, out hit, Mathf.Infinity, groundLayer) && ground != null && hit.collider.gameObject.GetComponent<Interactable>() != null)
+        {
+            // Mouse is still on map
             ground = hit.collider.gameObject.GetComponent<Interactable>();
             ground.OnMouseHoverObj();
             groundPos = hit.point;
         }
-        else if(ground != null)
+        else if (ground != null)
         {
+            // Mouse is off of the map
             ground.OnMouseExitObj();
             ground = null;
         }

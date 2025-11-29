@@ -46,4 +46,13 @@ public class GroundInteract : Interactable
 
         abilityRangeIndicator.SetActive(false);
     }
+
+    public override void OnMouseEnterObj()
+    {
+        base.OnMouseEnterObj();
+
+        CardInteractionManager.cardReleasedTrigger = false;
+    }
+
+
 }

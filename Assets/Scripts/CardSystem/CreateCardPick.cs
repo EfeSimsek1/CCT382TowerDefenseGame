@@ -6,10 +6,25 @@ public class CreateCardPick : MonoBehaviour
     GameObject cardPrefab;
     [SerializeField]
     CardPool cardPool;
+    private GameObject currentCard;
 
     private void Awake()
     {
         GameObject newCard = Instantiate(cardPrefab, transform.position, Quaternion.identity, transform);
+
+        currentCard = newCard;
+
+        //Set the cardData of the Instantiated card
+        newCard.GetComponent<CardDisplay>().cardData = cardPool.cards[Random.Range(0, cardPool.cards.Count)];
+    }
+
+    public void GenerateNewCard()
+    {
+        Destroy(currentCard);
+
+        GameObject newCard = Instantiate(cardPrefab, transform.position, Quaternion.identity, transform);
+
+        currentCard = newCard;
 
         //Set the cardData of the Instantiated card
         newCard.GetComponent<CardDisplay>().cardData = cardPool.cards[Random.Range(0, cardPool.cards.Count)];
