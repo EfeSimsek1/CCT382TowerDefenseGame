@@ -6,6 +6,7 @@ public class CardPick : MonoBehaviour, IPointerDownHandler
     public void OnPointerDown(PointerEventData eventData)
     {
         DeckManager.instance.AddCardToDeck(GetComponent<CardDisplay>().cardData);
-        SceneController.instance.NextLevel();
+        FindAnyObjectByType<DrawPileManager>().AddNewCard(GetComponent<CardDisplay>().cardData);
+        CardPickManager.instance.CloseCardMenu();
     }
 }

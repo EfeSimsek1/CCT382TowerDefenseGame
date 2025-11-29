@@ -16,7 +16,8 @@ MonoBehaviour:
   cardSprite: {fileID: 0}
   cost: 30
   cardType: 2
-  description: 
+  description: Deploys an explosion in a radius
+  image: {fileID: 21300000, guid: 3c23e3269b0dfec44b8b33e6c3bfe9ec, type: 3}
   abilityType: 0
   radius: 5
   damage: 8

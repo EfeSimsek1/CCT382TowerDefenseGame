@@ -2,15 +2,38 @@ using UnityEngine;
 
 public class CardPickManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private GameObject cardPickMenu;
+    [SerializeField] CreateCardPick[] cardPicks;
+    public static CardPickManager instance;
+
+    private void Awake()
     {
-        
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+        cardPickMenu.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OpenCardPickMenu()
     {
-        
+        cardPickMenu.SetActive(true);
+        foreach(CreateCardPick cardPick in cardPicks)
+        {
+            cardPick.GenerateNewCard();
+        }
     }
+
+    public void CloseCardMenu()
+    {
+        cardPickMenu.SetActive(false);
+    }
+
+
 }

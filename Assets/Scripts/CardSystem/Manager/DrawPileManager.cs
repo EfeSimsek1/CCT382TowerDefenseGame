@@ -24,7 +24,7 @@ public class DrawPileManager : MonoBehaviour
 
         drawPile = ShuffleCards(deckManager.deck);
 
-        for (int i = 0; i < startingHandSize; i++)
+        for (int i = 0; i < Mathf.Min(startingHandSize, deckManager.deck.Count); i++)
         {
             DrawCard(handManager);
         }
@@ -82,5 +82,11 @@ public class DrawPileManager : MonoBehaviour
         }
 
         return shuffledList;
+    }
+
+    public void AddNewCard(Card card) 
+    {
+        drawPile.Add(card);
+        DrawCard(handManager);
     }
 }
