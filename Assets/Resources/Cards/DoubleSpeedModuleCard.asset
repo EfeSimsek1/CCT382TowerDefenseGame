@@ -17,6 +17,7 @@ MonoBehaviour:
   cost: 20
   cardType: 1
   description: 
+  image: {fileID: 21300000, guid: 3551d455289470b42bab45f8bf41c644, type: 3}
   moduleModel: {fileID: 0}
   moduleType: 1
   multiplier: 1.2
