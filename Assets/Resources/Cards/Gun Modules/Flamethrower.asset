@@ -17,7 +17,8 @@ MonoBehaviour:
   cost: 25
   cardType: 1
   description: 
+  image: {fileID: 0}
   moduleModel: {fileID: 2440941003837750162, guid: 47b435b197deff24d9e0e09cce8337f5, type: 3}
   moduleType: 0
-  damagePerShot: 3
+  damagePerShot: 40
   damageTypes: 

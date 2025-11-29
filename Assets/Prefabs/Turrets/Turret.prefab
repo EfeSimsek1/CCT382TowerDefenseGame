@@ -402,7 +402,7 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 264
-  damage: 1
+  damage: 10
   damageType: 0
   ShootingAudioClip: {fileID: 8300000, guid: ecd5940341b9db841b58a252c720d11e, type: 3}
   canFire: 0
