@@ -51,7 +51,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2775073986121626433}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlotSelect
   turretPrefab: {fileID: 2319720567184235521, guid: 855ec1676b536f144a56dba4a65e1a4d, type: 3}
-  turretPreviewTransparency: 0.2
+  turretPreviewTransparency: 100
 --- !u!114 &8666020498699717974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,4 +146,4 @@ MonoBehaviour:
   m_GenerateLinks: 0
   m_IgnoreFromBuild: 0
   m_ApplyToChildren: 1
-  m_AffectedAgents: ffffffff
+  m_AffectedAgents: 00000000
