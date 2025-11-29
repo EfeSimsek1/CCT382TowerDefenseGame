@@ -81,13 +81,13 @@ public class GameManager : MonoBehaviour
     private void GainMoney(int amountOfMoney)
     {
         currentPlayerMoney += amountOfMoney;
-        moneyCount.text = $"Money: {currentPlayerMoney}";
+        moneyCount.text = $"{currentPlayerMoney}";
     }
 
     private void LoseMoney(int amountOfMoney)
     {
         currentPlayerMoney -= amountOfMoney;
-        moneyCount.text = $"Money: {currentPlayerMoney}";
+        moneyCount.text = $"{currentPlayerMoney}";
     }
 
     private void ExtractFromEnemy(GameObject enemy)

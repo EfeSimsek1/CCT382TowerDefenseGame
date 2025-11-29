@@ -10,11 +10,13 @@ public struct WaveInfo
 {
     public EnemyNumberPair[] enemyAmounts;
     public float enemiesSpawnedPerSecond;
+    public bool cardPickWave;
 
     public WaveInfo(EnemyNumberPair[] pairs, float _enemiesPerSecond)
     {
         enemyAmounts = pairs;
         enemiesSpawnedPerSecond = _enemiesPerSecond;
+        cardPickWave = false;
     }
 }
 

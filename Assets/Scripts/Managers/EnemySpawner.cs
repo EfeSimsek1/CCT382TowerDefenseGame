@@ -80,6 +80,12 @@ public class EnemySpawner : MonoBehaviour
     {
         isSpawning = false;
         timeSinceLastSpawn = 0f;
+
+        if (waves[currentWave].cardPickWave)
+        {
+            CardPickManager.instance.OpenCardPickMenu();
+        }
+
         currentWave++;
 
         if (currentWave >= waves.Length)
@@ -90,8 +96,6 @@ public class EnemySpawner : MonoBehaviour
         waitingForNextWave = true;
 
         GameManager.onGainMoney.Invoke(moneyBetweenWaves);
-
-        //Debug.Log($"Wave {currentWave} ended");
     }
 
     public void AttemptNextWave()
