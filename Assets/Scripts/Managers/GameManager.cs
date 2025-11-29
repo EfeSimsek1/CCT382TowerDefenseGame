@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
         currentPlayerHealth = maxPlayerHealth;
         currentPlayerMoney = startingPlayerMoney;
         gameOverText.gameObject.SetActive(false);
-        moneyCount.text = $"Money: {currentPlayerMoney}";
+        moneyCount.text = currentPlayerMoney.ToString();
     }
 
     private void OnDamaged(int damage)

@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Card : ScriptableObject
 {
@@ -9,6 +10,7 @@ public class Card : ScriptableObject
     public int cost;
     public CardType cardType;
     public string description;
+    public Sprite image;
 
     public enum CardType
     {
