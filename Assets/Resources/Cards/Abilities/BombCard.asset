@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BombCard
   cardName: Bomb
   cardSprite: {fileID: 0}
-  cost: 0
+  cost: 30
   cardType: 2
   description: 
   abilityType: 0
   radius: 5
-  damage: 10
+  damage: 8
   damageType: 0
   enemyMask:
     serializedVersion: 2
