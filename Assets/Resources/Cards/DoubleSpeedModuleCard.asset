@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cedfcc362fc7374eab6957415a631f0, type: 3}
   m_Name: DoubleSpeedModuleCard
   m_EditorClassIdentifier: Assembly-CSharp::DoubleSpeedModuleCard
-  cardName: 2x Speed
+  cardName: Increased Fire Rate
   cardSprite: {fileID: 0}
-  cost: 10
+  cost: 20
   cardType: 1
   description: 
   moduleModel: {fileID: 0}
   moduleType: 1
-  multiplier: 2
+  multiplier: 1.2
