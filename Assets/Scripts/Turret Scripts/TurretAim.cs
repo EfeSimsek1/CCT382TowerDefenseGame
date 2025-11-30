@@ -36,6 +36,7 @@ public class TurretAim : MonoBehaviour
         target = null;
 
         Collider[] detectedEnemyColliders = Physics.OverlapCapsule(transform.position, transform.position + Vector3.up * 10f, targetRadius, enemyMask);
+        Collider[] detectedCloakedEnemyColliders = Physics.OverlapCapsule(transform.position, transform.position + Vector3.up * 10f, cloakedTargetRadius, cloakedEnemyMask);
 
         List <GameObject> detectedEnemies = new List<GameObject>();
 
@@ -76,7 +77,25 @@ public class TurretAim : MonoBehaviour
                 }
             }
 
-            if(farthestInPath != null) target = farthestInPath.transform;
+            GameObject closestCloaked = null;
+            float closestDistance = float.MaxValue;
+            foreach(Collider enemy in detectedCloakedEnemyColliders)
+            {
+                if(Vector2.Distance(transform.position, enemy.gameObject.transform.position) <= closestDistance)
+                {
+                    closestCloaked = enemy.gameObject;
+                    closestDistance = Vector2.Distance(transform.position, enemy.gameObject.transform.position);
+                }
+            }
+
+            if (closestCloaked != null)
+            {
+                target = closestCloaked.transform;
+            }
+            else if (farthestInPath != null)
+            {
+                target = farthestInPath.transform;
+            }
             #endregion
         }
     }

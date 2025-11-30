@@ -58,7 +58,7 @@ SphereCollider:
     m_Bits: 128
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 127
+    m_Bits: 895
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
@@ -171,10 +171,10 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 127
+    m_Bits: 895
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
@@ -247,6 +247,7 @@ MonoBehaviour:
   deathAnimTime: 0
   killTrigger: 0
   damageWeaknesses: 
+  currentHealth: 0
   deathClip: {fileID: 0}
 --- !u!114 &4587941758466670934
 MonoBehaviour:
@@ -263,6 +264,7 @@ MonoBehaviour:
   damageOnDeath: 20
   speed: 2
   moneyDroppedOnDeath: 1
+  agent: {fileID: 0}
   movementAudioClip: {fileID: 0}
   audioSource: {fileID: 0}
   height: 3
