@@ -3185,16 +3185,61 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   waves:
   - enemyAmounts:
-    - enemy: {fileID: 6864183603021173478, guid: e5649734574786143b4970d6102462a3, type: 3}
+    - enemy: {fileID: 6864183603021173478, guid: 100a602f03def554793bfed361837663, type: 3}
+      number: 20
+    enemiesSpawnedPerSecond: 1.5
+    cardPickWave: 1
+  - enemyAmounts:
+    - enemy: {fileID: 6864183603021173478, guid: 100a602f03def554793bfed361837663, type: 3}
+      number: 12
+    - enemy: {fileID: 6864183603021173478, guid: df1a4d89089359848a294a84255589a1, type: 3}
+      number: 6
+    - enemy: {fileID: 6864183603021173478, guid: 38aec690dadcc224083c27ad49c39085, type: 3}
+      number: 8
+    enemiesSpawnedPerSecond: 1.5
+    cardPickWave: 1
+  - enemyAmounts:
+    - enemy: {fileID: 6864183603021173478, guid: 512d111142338db4fa136a269259595a, type: 3}
+      number: 6
+    - enemy: {fileID: 6864183603021173478, guid: 38aec690dadcc224083c27ad49c39085, type: 3}
+      number: 4
+    enemiesSpawnedPerSecond: 1.5
+    cardPickWave: 1
+  - enemyAmounts:
+    - enemy: {fileID: 6864183603021173478, guid: 100a602f03def554793bfed361837663, type: 3}
       number: 1
-    enemiesSpawnedPerSecond: 0.5
+    - enemy: {fileID: 6864183603021173478, guid: 512d111142338db4fa136a269259595a, type: 3}
+      number: 50
+    enemiesSpawnedPerSecond: 5
+    cardPickWave: 1
+  - enemyAmounts:
+    - enemy: {fileID: 6864183603021173478, guid: 100a602f03def554793bfed361837663, type: 3}
+      number: 6
+    - enemy: {fileID: 6864183603021173478, guid: df1a4d89089359848a294a84255589a1, type: 3}
+      number: 5
+    - enemy: {fileID: 6864183603021173478, guid: 512d111142338db4fa136a269259595a, type: 3}
+      number: 30
+    - enemy: {fileID: 6864183603021173478, guid: 38aec690dadcc224083c27ad49c39085, type: 3}
+      number: 24
+    enemiesSpawnedPerSecond: 2
+    cardPickWave: 1
+  - enemyAmounts:
+    - enemy: {fileID: 6864183603021173478, guid: a6e4f6074ffc009438adc4a42a0d0161, type: 3}
+      number: 20
+    enemiesSpawnedPerSecond: 2
     cardPickWave: 0
   - enemyAmounts:
-    - enemy: {fileID: 6864183603021173478, guid: e5649734574786143b4970d6102462a3, type: 3}
-      number: 3
-    - enemy: {fileID: 1584269240062416963, guid: 9bb2bb11e0cf189409e1209663ca3fb9, type: 3}
-      number: 2
-    enemiesSpawnedPerSecond: 0.5
+    - enemy: {fileID: 6864183603021173478, guid: 100a602f03def554793bfed361837663, type: 3}
+      number: 50
+    - enemy: {fileID: 6864183603021173478, guid: df1a4d89089359848a294a84255589a1, type: 3}
+      number: 30
+    - enemy: {fileID: 6864183603021173478, guid: 38aec690dadcc224083c27ad49c39085, type: 3}
+      number: 27
+    - enemy: {fileID: 6864183603021173478, guid: 512d111142338db4fa136a269259595a, type: 3}
+      number: 50
+    - enemy: {fileID: 6864183603021173478, guid: a6e4f6074ffc009438adc4a42a0d0161, type: 3}
+      number: 25
+    enemiesSpawnedPerSecond: 4
     cardPickWave: 0
   waveIndicator: {fileID: 1217074086}
   moneyBetweenWaves: 10
