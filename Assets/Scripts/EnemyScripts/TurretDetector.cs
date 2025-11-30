@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 public class TurretDetector : MonoBehaviour
 {
-    public static UnityEvent<Transform> onTurretDetected = new UnityEvent<Transform>();
+    public static UnityEvent<Vector3> onTurretDetected = new UnityEvent<Vector3>();
     private SphereCollider detectionField;
 
     private void Start()
@@ -14,7 +14,7 @@ public class TurretDetector : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //Debug.Log("turret detected!", other.gameObject);
-        onTurretDetected.Invoke(other.transform);
+        onTurretDetected.Invoke(other.GetComponent<BoxCollider>().bounds.center);
     }
 
     private void OnDrawGizmos()

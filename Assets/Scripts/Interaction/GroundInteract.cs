@@ -31,7 +31,7 @@ public class GroundInteract : Interactable
 
         Card lastHeldCard = CardInteractionManager.LastHeldCard;
 
-        if (CardInteractionManager.cardReleasedTrigger && lastHeldCard.cardType == Card.CardType.Ability && ((AbilityCard)lastHeldCard).abilityType == Card.AbilityType.AOE)
+        if (CardInteractionManager.cardReleasedTrigger && lastHeldCard.cardType == Card.CardType.Ability && ((AbilityCard)lastHeldCard).abilityType == Card.AbilityType.AOE && CardInteractionManager.CanAffordCard(lastHeldCard))
         {
             ((AbilityCard)lastHeldCard).Activate();
             CardInteractionManager.PlayCard(lastHeldCard);

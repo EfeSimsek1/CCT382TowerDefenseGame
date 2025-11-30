@@ -49,7 +49,7 @@ public class EnemyBehaviour : MonoBehaviour
             playCoroutine = StartCoroutine(PlayRandomly());
     }
 
-    private System.Collections.IEnumerator PlayRandomly()
+    private IEnumerator PlayRandomly()
     {
         while (true)
         {
@@ -73,6 +73,6 @@ public class EnemyBehaviour : MonoBehaviour
     {
         // wait until the agent has a path
         while (agent.pathPending) yield return null;
-        progress.RecalculateTotalPathLength();
+        if (progress != null) progress.RecalculateTotalPathLength();
     }
 }

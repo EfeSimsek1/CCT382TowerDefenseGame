@@ -374,11 +374,13 @@ RectTransform:
   - {fileID: 1864202670}
   - {fileID: 1217074085}
   - {fileID: 1937306704}
+  - {fileID: 562778247}
   - {fileID: 209709055}
   - {fileID: 294819996}
   - {fileID: 765923825}
   - {fileID: 1477556539}
   - {fileID: 2085428396}
+  - {fileID: 774738525}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -386,6 +388,41 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &116561158
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 116561159}
+  m_Layer: 5
+  m_Name: CardPos (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &116561159
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116561158}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 774738525}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -540, y: 87}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &132827377
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3731,65 +3768,53 @@ MonoBehaviour:
   waves:
   - enemyAmounts:
     - enemy: {fileID: 6864183603021173478, guid: 100a602f03def554793bfed361837663, type: 3}
-      number: 10
-    - enemy: {fileID: 6864183603021173478, guid: df1a4d89089359848a294a84255589a1, type: 3}
-      number: 7
-    enemiesSpawnedPerSecond: 1.5
-    cardPickWave: 1
-  - enemyAmounts:
-    - enemy: {fileID: 6864183603021173478, guid: 100a602f03def554793bfed361837663, type: 3}
-      number: 12
-    - enemy: {fileID: 6864183603021173478, guid: df1a4d89089359848a294a84255589a1, type: 3}
-      number: 6
-    - enemy: {fileID: 6864183603021173478, guid: 38aec690dadcc224083c27ad49c39085, type: 3}
-      number: 8
-    enemiesSpawnedPerSecond: 1.5
-    cardPickWave: 1
-  - enemyAmounts:
-    - enemy: {fileID: 6864183603021173478, guid: 512d111142338db4fa136a269259595a, type: 3}
-      number: 7
-    - enemy: {fileID: 6864183603021173478, guid: 38aec690dadcc224083c27ad49c39085, type: 3}
       number: 5
-    enemiesSpawnedPerSecond: 1.5
-    cardPickWave: 1
-  - enemyAmounts:
-    - enemy: {fileID: 6864183603021173478, guid: 100a602f03def554793bfed361837663, type: 3}
-      number: 4
-    - enemy: {fileID: 6864183603021173478, guid: 512d111142338db4fa136a269259595a, type: 3}
-      number: 15
-    enemiesSpawnedPerSecond: 2
-    cardPickWave: 1
-  - enemyAmounts:
-    - enemy: {fileID: 6864183603021173478, guid: 100a602f03def554793bfed361837663, type: 3}
-      number: 6
-    - enemy: {fileID: 6864183603021173478, guid: df1a4d89089359848a294a84255589a1, type: 3}
-      number: 5
-    - enemy: {fileID: 6864183603021173478, guid: 512d111142338db4fa136a269259595a, type: 3}
-      number: 15
-    - enemy: {fileID: 6864183603021173478, guid: 38aec690dadcc224083c27ad49c39085, type: 3}
-      number: 12
-    enemiesSpawnedPerSecond: 2
-    cardPickWave: 1
-  - enemyAmounts:
-    - enemy: {fileID: 6864183603021173478, guid: a6e4f6074ffc009438adc4a42a0d0161, type: 3}
-      number: 10
-    enemiesSpawnedPerSecond: 2
+    enemiesSpawnedPerSecond: 1
     cardPickWave: 0
   - enemyAmounts:
     - enemy: {fileID: 6864183603021173478, guid: 100a602f03def554793bfed361837663, type: 3}
-      number: 50
-    - enemy: {fileID: 6864183603021173478, guid: df1a4d89089359848a294a84255589a1, type: 3}
-      number: 30
-    - enemy: {fileID: 6864183603021173478, guid: 38aec690dadcc224083c27ad49c39085, type: 3}
-      number: 27
-    - enemy: {fileID: 6864183603021173478, guid: 512d111142338db4fa136a269259595a, type: 3}
-      number: 30
-    - enemy: {fileID: 6864183603021173478, guid: a6e4f6074ffc009438adc4a42a0d0161, type: 3}
-      number: 18
-    enemiesSpawnedPerSecond: 3
+      number: 5
+    enemiesSpawnedPerSecond: 1.5
     cardPickWave: 0
   waveIndicator: {fileID: 1217074086}
   moneyBetweenWaves: 15
+  arrowIndicator: {fileID: 973423518}
+  moneyBetweenWaves: 10
+--- !u!1 &698465354
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 698465355}
+  m_Layer: 5
+  m_Name: CardPos (10)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &698465355
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698465354}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 774738525}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -58, y: -305}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &702169711
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4197,7 +4222,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00012207031, y: 0}
+  m_AnchoredPosition: {x: 0.000061035156, y: 0}
   m_SizeDelta: {x: 60, y: 35.17627}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &765923826
