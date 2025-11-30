@@ -13,6 +13,7 @@ public class EnemySpawner : MonoBehaviour
 
     [Header("References")]
     [SerializeField] TextMeshProUGUI waveIndicator;
+    [SerializeField] GameObject arrowIndicator;
 
     [Header("Attributes")]
     //[SerializeField] private float timeBetweenWaves = 5f;
@@ -30,6 +31,7 @@ public class EnemySpawner : MonoBehaviour
     private Dictionary<String, GameObject> nameToPrefab = new Dictionary<String, GameObject>();
     private bool isSpawning = false;
     public static bool waitingForNextWave = false;
+
 
     private void Awake()
     {
@@ -64,7 +66,7 @@ public class EnemySpawner : MonoBehaviour
             }
         }
 
-        waveIndicator.text = $"Wave: {currentWave + 1}";
+        waveIndicator.text = $"Wave: {currentWave + 1}";        
     }
     private void StartWave()
     {
@@ -74,6 +76,8 @@ public class EnemySpawner : MonoBehaviour
         SetEnemiesPerWave();
         //Debug.Log($"Wave {currentWave + 1} started");
         waitingForNextWave = false;
+
+        if (arrowIndicator != null) arrowIndicator.SetActive(false);
     }
 
     void EndWave()
@@ -96,6 +100,8 @@ public class EnemySpawner : MonoBehaviour
         waitingForNextWave = true;
 
         GameManager.onGainMoney.Invoke(moneyBetweenWaves);
+
+        if (arrowIndicator != null) arrowIndicator.SetActive(true);
     }
 
     public void AttemptNextWave()
