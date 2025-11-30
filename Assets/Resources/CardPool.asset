@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: CardPool
   m_EditorClassIdentifier: Assembly-CSharp::CardPool
   cards:
-  - {fileID: 11400000, guid: b331ff0dc9fbcba45aa8a97b7a88d4cd, type: 2}
-  - {fileID: 11400000, guid: 72e10ea6cbab81f46be0a05dd202423c, type: 2}
+  - {fileID: 11400000, guid: f7d378eaf5d68024cb7650b215f4816e, type: 2}
+  - {fileID: 11400000, guid: debe7f0af1a37674cb6f44fd04069b61, type: 2}
   - {fileID: 11400000, guid: 8cfcd3f6ba455d442a0fc76f85c97eee, type: 2}
+  - {fileID: 11400000, guid: 2b315861513231b4c82bf5594dadceb2, type: 2}
+  - {fileID: 11400000, guid: 703cc610ad0eef744902dfd9c0839af4, type: 2}
+  - {fileID: 11400000, guid: 46f3e0c5c84ab0b4ba30a33552919bd4, type: 2}

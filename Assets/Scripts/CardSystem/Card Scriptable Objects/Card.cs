@@ -1,23 +1,22 @@
 using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-[CreateAssetMenu(fileName = "New Card", menuName = "Card")]
 public class Card : ScriptableObject
 {
     public string cardName;
     public Sprite cardSprite;
-    public int damage;
     public int cost;
     public CardType cardType;
-    public GameObject moduleModel;
-    public ModuleType moduleType;
     public string description;
+    public Sprite image;
 
     public enum CardType
     {
         Turret,
-        Module
+        Module,
+        Ability
     }
 
     public enum DamageType
@@ -33,5 +32,10 @@ public class Card : ScriptableObject
     {
         Firing,
         Support
+    }
+
+    public enum AbilityType
+    {
+        AOE
     }
 }

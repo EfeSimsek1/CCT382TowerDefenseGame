@@ -8,7 +8,7 @@ public class ShootingController : MonoBehaviour
 {
     [Header("Firing attributes")]
     [SerializeField]
-    private float ShootDelay = 0.5f;
+    public float shootDelay = 0.5f;
     [SerializeField]
     private LayerMask mask;
 
@@ -46,7 +46,7 @@ public class ShootingController : MonoBehaviour
 
     private void Update()
     {
-        if (turretAim.target != null && LastShootTime + ShootDelay < Time.time && canFire && firingModule != null)
+        if (turretAim.target != null && LastShootTime + shootDelay < Time.time && canFire && firingModule != null)
         {
             Shoot();
         }

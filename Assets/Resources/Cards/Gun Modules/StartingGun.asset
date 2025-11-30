@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83f1ccf777dc5874a86543acf6b960a3, type: 3}
+  m_Name: StartingGun
+  m_EditorClassIdentifier: Assembly-CSharp::GunModuleCard
+  cardName: StartingGunModule
+  cardSprite: {fileID: 0}
+  cost: 0
+  cardType: 1
+  description: 
+  image: {fileID: 0}
+  moduleModel: {fileID: 2440941003837750162, guid: 44a6de557bb6ebf438a1e6feddcedf6c, type: 3}
+  moduleType: 0
+  damagePerShot: 12
+  damageTypes: 

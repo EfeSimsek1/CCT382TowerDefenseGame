@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="53cb64de-77af-4af1-bfc7-91ebeb342e2e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/CardPickMenu.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/CardPickMenu.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PauseMenuController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PauseMenuController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Card images.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Card images/ability_card.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Card images/ability_card.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Card images/blank_card.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Card images/blank_card.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Card images/blood money icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Card images/blood money icon.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Card images/bomb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Card images/bomb.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Card images/coolant icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Card images/coolant icon.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Card images/disintegration ray icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Card images/disintegration ray icon.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Card images/empty_card.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Card images/empty_card.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Card images/fire element.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Card images/fire element.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Card images/flamethrower icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Card images/flamethrower icon.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Card images/gold coin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Card images/gold coin.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Card images/hyper speed icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Card images/hyper speed icon.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Card images/ice card icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Card images/ice card icon.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Card images/ice element.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Card images/ice element.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Card images/lightning element.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Card images/lightning element.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Card images/lightning icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Card images/lightning icon.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Card images/module_card.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Card images/module_card.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Card images/money gain.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Card images/money gain.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Card images/scrap salvage icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Card images/scrap salvage icon.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Card images/sniper icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Card images/sniper icon.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Card images/turret icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Card images/turret icon.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Card images/turret upgrade.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Card images/turret upgrade.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Card images/turret_card.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Card images/turret_card.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/NeonSans-m2YEx SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/NeonSans-m2YEx SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modern GDR - Free icons pack/01_Demo/Font/IbarraRealNova-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modern GDR - Free icons pack/01_Demo/Font/IbarraRealNova-Regular SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/CardSystem/CardPrefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/CardSystem/CardPrefab.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/CardSystem/PickingCardPrefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/CardSystem/PickingCardPrefab.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/CardSystem/PickingCardPrefab.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/CardSystem/PickingCardPrefab.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/CardPool.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/CardPool.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Cards/Abilities/BombCard.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Cards/Abilities/BombCard.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Cards/TurretCard.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Cards/TurretCard.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/level1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/level1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/level2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/level2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/level3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/level3.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/level4.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/level4.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSystem/Card Scriptable Objects/Card.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardSystem/Card Scriptable Objects/Card.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSystem/CardDisplay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardSystem/CardDisplay.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSystem/CardPick.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardSystem/CardPick.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSystem/CreateCardPick.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardSystem/CreateCardPick.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSystem/Manager/CardPickManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardSystem/Manager/CardPickManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSystem/Manager/DrawPileManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CardSystem/Manager/DrawPileManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSystem/UIInputManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/UIInputManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardSystem/UIInputManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/UIInputManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/GroundInteract.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/GroundInteract.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/EnemySpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/EnemySpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/SceneController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/SceneController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Wave.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Wave.cs" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 2
+}]]></component>
+  <component name="ProjectId" id="36AZx8yuclHs25uxXbzJyJ6senr" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "Merging main",
+    "kotlin-language-version-configured": "true",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.22855.74" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.22855.74" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="53cb64de-77af-4af1-bfc7-91ebeb342e2e" name="Changes" comment="" />
+      <created>1764451579970</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1764451579970</updated>
+      <workItem from="1764451581376" duration="59000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

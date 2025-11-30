@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GunModuleCard: Card
+[CreateAssetMenu(fileName = "New Card", menuName = "Card/GunModule")]
+public class GunModuleCard: ModuleCard
 {
-    public float damagePerShot;
+    public int damagePerShot;
     public List<DamageType> damageTypes;
-
 }

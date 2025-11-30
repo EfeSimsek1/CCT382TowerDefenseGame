@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
@@ -17,17 +18,20 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField] private AudioSource audioSource;
 
     private Coroutine playCoroutine;
+    private PathProgress progress;
 
     protected virtual void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        progress = GetComponent<PathProgress>();
         agent.speed = speed;
+        agent.SetDestination(LevelManager.instance.endPoint.position);
+
+        StartCoroutine(RecalcWhenReady(agent, progress));
     }
 
     protected virtual void Update()
     {
-        agent.SetDestination(LevelManager.instance.endPoint.position);
-
         if (Vector3.Distance(transform.position, LevelManager.instance.endPoint.position) <= 1.2f)
         {
             // Destroy enemy and inflict damage to the player
@@ -65,8 +69,10 @@ public class EnemyBehaviour : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
+    IEnumerator RecalcWhenReady(NavMeshAgent agent, PathProgress progress)
     {
-
+        // wait until the agent has a path
+        while (agent.pathPending) yield return null;
+        progress.RecalculateTotalPathLength();
     }
 }

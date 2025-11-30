@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ModuleController : MonoBehaviour
 {
@@ -10,6 +11,15 @@ public class ModuleController : MonoBehaviour
     [Header("References")]
     [SerializeField]
     private Card startingGunModule;
+    [SerializeField]
+    private Sprite slotUnfilled;
+    [SerializeField]
+    private Sprite slotFilled;
+    [SerializeField]
+    private Image gunSlotUIImage;
+    [SerializeField]
+    private Image[] supportSlotUIImages;
+
 
     public List<Module> modules = new List<Module>();
     private Card gunModule;
@@ -20,30 +30,36 @@ public class ModuleController : MonoBehaviour
 
     private BoxCollider bc;
     ShootingController shootControl;
+    TurretAim turretAim;
+    OverheatSystem overheatSystem;
+
 
     void Start()
     {
         modules = new List<Module>();
         bc = GetComponent<BoxCollider>();
         shootControl = GetComponent<ShootingController>();
+        turretAim = GetComponent<TurretAim>();
+        overheatSystem = GetComponent<OverheatSystem>();
         if (startingGunModule)
         {
             AddModule(startingGunModule);
         }
         usingBaseGun = true;
+        supportSlotsFilled = 0;
     }
 
     public void AddModule(Card card)
     {
         if (card.cardType == Card.CardType.Module)
         {
-            if (card.moduleType == Card.ModuleType.Firing && shootControl.firingModule == null)
+            if (((ModuleCard)card).moduleType == Card.ModuleType.Firing && shootControl.firingModule == null)
             {
                 #region Add starting module
 
-                GameObject module = Instantiate(card.moduleModel, gunModuleSocket.position, gunModuleSocket.rotation, gunModuleSocket);
+                GameObject module = Instantiate(((ModuleCard)card).moduleModel, gunModuleSocket.position, gunModuleSocket.rotation, gunModuleSocket);
 
-                GetComponent<ShootingController>().damage = card.damage;
+                GetComponent<ShootingController>().damage = ((GunModuleCard)card).damagePerShot;
 
                 //Debug.Log(module.name);
 
@@ -56,11 +72,11 @@ public class ModuleController : MonoBehaviour
 
                 #endregion
             }
-            else if(card.moduleType == Card.ModuleType.Firing && usingBaseGun) 
+            else if(((ModuleCard)card).moduleType == Card.ModuleType.Firing && usingBaseGun) 
             {
                 #region replace starting module
 
-                GameObject module = Instantiate(card.moduleModel, gunModuleSocket.position, gunModuleSocket.rotation, gunModuleSocket);
+                GameObject module = Instantiate(((ModuleCard)card).moduleModel, gunModuleSocket.position, gunModuleSocket.rotation, gunModuleSocket);
 
                 IFiringModule firingModule = module.GetComponentInChildren<IFiringModule>();
 
@@ -73,17 +89,21 @@ public class ModuleController : MonoBehaviour
 
                 usingBaseGun = false;
 
+                gunSlotUIImage.sprite = slotFilled;
                 #endregion
             }
-            else if(card.moduleType == Card.ModuleType.Support)
+            else if(((ModuleCard)card).moduleType == Card.ModuleType.Support)
             {
                 //add support module
                 supportSlotsFilled++;
+                ((SupportModuleCard)card).Activate(shootControl, turretAim, overheatSystem);
+                Debug.Log(turretAim.targetRadius);
+                supportSlotUIImages[supportSlotsFilled - 1].sprite = slotFilled;
             }
         }
     }
 
-    public bool CanAddModule(Card card)
+    public bool CanAddModule(ModuleCard card)
     {
         return (card.moduleType == Card.ModuleType.Firing && usingBaseGun) || (card.moduleType == Card.ModuleType.Support && (supportSlotsFilled < supportModuleLimit));
     }
@@ -96,6 +116,7 @@ public class ModuleController : MonoBehaviour
             shootControl.firingModule = null;
             AddModule(startingGunModule);
             usingBaseGun = true;
+            gunSlotUIImage.sprite = slotUnfilled;
         }
         else if (supportSlotsFilled == 0)
         {
@@ -103,6 +124,8 @@ public class ModuleController : MonoBehaviour
         }
         else
         {
+            supportSlotUIImages[supportSlotsFilled - 1].sprite = slotFilled;
+
             // destroy support module
             supportSlotsFilled--;
         }

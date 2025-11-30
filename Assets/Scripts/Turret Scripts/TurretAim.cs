@@ -36,8 +36,6 @@ public class TurretAim : MonoBehaviour
         target = null;
 
         Collider[] detectedEnemyColliders = Physics.OverlapCapsule(transform.position, transform.position + Vector3.up * 10f, targetRadius, enemyMask);
-        Collider[] detectedCloakedEnemyColliders = Physics.OverlapCapsule(transform.position, transform.position + Vector3.up * 10f, targetRadius, cloakedEnemyMask);
-
 
         List <GameObject> detectedEnemies = new List<GameObject>();
 
@@ -65,35 +63,20 @@ public class TurretAim : MonoBehaviour
         }
         else
         {
+            GameObject farthestInPath = null;
+            float greatestProgress = 0f;
+
             #region Base Filter
-            Transform closestNonCloaked = null;
-
-            foreach (Collider hitCollider in detectedEnemyColliders)
+            foreach(GameObject enemy in detectedEnemies)
             {
-                if (closestNonCloaked == null || GetXYDistance(transform.position, hitCollider.gameObject.transform.position) < GetXYDistance(transform.position, closestNonCloaked.position))
+                if(enemy.GetComponent<PathProgress>().NormalizedProgress >= greatestProgress)
                 {
-                    closestNonCloaked = hitCollider.gameObject.transform;
+                    farthestInPath = enemy;
+                    greatestProgress = enemy.GetComponent<PathProgress>().NormalizedProgress;
                 }
             }
 
-            Transform closestCloaked = null;
-
-            foreach (Collider hitCollider in detectedCloakedEnemyColliders)
-            {
-                if (!hitCollider.gameObject.transform.IsChildOf(transform) && (closestCloaked == null || GetXYDistance(transform.position, hitCollider.gameObject.transform.position) < GetXYDistance(transform.position, closestCloaked.position)))
-                {
-                    closestCloaked = hitCollider.gameObject.transform;
-                }
-            }
-
-            if (closestNonCloaked == null || (closestNonCloaked != null && closestCloaked != null && GetXYDistance(transform.position, closestCloaked.position) < GetXYDistance(transform.position, closestNonCloaked.position)))
-            {
-                target = closestCloaked;
-            }
-            else
-            {
-                target = closestNonCloaked;
-            }
+            if(farthestInPath != null) target = farthestInPath.transform;
             #endregion
         }
     }

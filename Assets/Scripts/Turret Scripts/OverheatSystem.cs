@@ -84,6 +84,6 @@ public class OverheatSystem : MonoBehaviour
         shootingController.Cool();
         isCooling = false;
 
-        Debug.Log("Cooling complete");
+        //Debug.Log("Cooling complete");
     }
 }
