@@ -63,7 +63,6 @@ public class GameManager : MonoBehaviour
     {
         currentPlayerHealth = maxPlayerHealth;
         currentPlayerMoney = startingPlayerMoney;
-        gameOverText.gameObject.SetActive(false);
         moneyCount.text = currentPlayerMoney.ToString();
     }
 
