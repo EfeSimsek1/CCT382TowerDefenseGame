@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GunModuleCard
   cardName: StartingGunModule
   cardSprite: {fileID: 0}
-  damage: 1
   cost: 0
   cardType: 1
   description: 
+  image: {fileID: 0}
   moduleModel: {fileID: 2440941003837750162, guid: 44a6de557bb6ebf438a1e6feddcedf6c, type: 3}
   moduleType: 0
-  damagePerShot: 1
+  damagePerShot: 12
   damageTypes: 

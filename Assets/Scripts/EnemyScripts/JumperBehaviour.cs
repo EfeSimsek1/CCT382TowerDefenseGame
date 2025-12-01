@@ -42,10 +42,10 @@ public class JumperBehaviour : EnemyBehaviour
         }
     }
 
-    private void Launch(Transform target)
+    private void Launch(Vector3 target)
     {
         //Debug.Log(CalculateLaunchVelocity(transform.position, target.position, height));
-        if (!launchInitiated) rb.linearVelocity = CalculateLaunchVelocity(transform.position, target.position, height);
+        if (!launchInitiated) rb.linearVelocity = CalculateLaunchVelocity(transform.position, target, height);
         launchInitiated = true;
     }
 
