@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class OverheatSystem : MonoBehaviour
 {
+    [Header("References")]
+    [SerializeField] ParticleSystem steamEffect;
+
     [Header("Attributes")]
     [SerializeField] private float heatPerShot;
     [SerializeField] private float coolingPerSec;
@@ -74,6 +77,7 @@ public class OverheatSystem : MonoBehaviour
     private IEnumerator Cooling()
     {
         isCooling = true;
+        steamEffect.Play();
 
         while (currentHeat > 0)
         {
@@ -84,6 +88,7 @@ public class OverheatSystem : MonoBehaviour
         shootingController.Cool();
         isCooling = false;
 
+        steamEffect.Stop();
         //Debug.Log("Cooling complete");
     }
 }

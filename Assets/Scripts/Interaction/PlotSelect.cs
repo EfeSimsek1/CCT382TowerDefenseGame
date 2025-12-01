@@ -68,6 +68,7 @@ public class PlotSelect : Interactable
         CreateEdgeIndicator();
     }
 
+    #region Highlight code
     [SerializeField] private bool showSceneWidget = true;
     [SerializeField] private Color sceneWidgetColor = new Color(0f, 1f, 0f, 0.6f);
     [SerializeField, Range(0.01f, 0.25f)] private float sceneWidgetInsetFraction = 0.10f;
@@ -208,5 +209,5 @@ public class PlotSelect : Interactable
         lr.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
         lr.receiveShadows = false;
     }
-    
+    #endregion
 }
