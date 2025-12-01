@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83f1ccf777dc5874a86543acf6b960a3, type: 3}
   m_Name: Flamethrower
   m_EditorClassIdentifier: Assembly-CSharp::GunModuleCard
-  cardName: Flamethrower
-  cardSprite: {fileID: 0}
+  cardName: Flame Thrower
+  cardSprite: {fileID: 21300000, guid: b6188c0810c912441ac54ed438e46774, type: 3}
   cost: 25
   cardType: 1
   description: 
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: b6188c0810c912441ac54ed438e46774, type: 3}
   moduleModel: {fileID: 2440941003837750162, guid: 47b435b197deff24d9e0e09cce8337f5, type: 3}
   moduleType: 0
   damagePerShot: 40
