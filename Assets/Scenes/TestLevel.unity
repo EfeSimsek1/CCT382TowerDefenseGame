@@ -2401,10 +2401,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deck:
-  - {fileID: 11400000, guid: 8cfcd3f6ba455d442a0fc76f85c97eee, type: 2}
-  - {fileID: 11400000, guid: 8cfcd3f6ba455d442a0fc76f85c97eee, type: 2}
-  - {fileID: 11400000, guid: 8cfcd3f6ba455d442a0fc76f85c97eee, type: 2}
-  - {fileID: 11400000, guid: 46f3e0c5c84ab0b4ba30a33552919bd4, type: 2}
+  - {fileID: 11400000, guid: 703cc610ad0eef744902dfd9c0839af4, type: 2}
+  - {fileID: 11400000, guid: f7d378eaf5d68024cb7650b215f4816e, type: 2}
 --- !u!224 &551062090
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3254,7 +3252,9 @@ MonoBehaviour:
     - enemy: {fileID: 6864183603021173478, guid: 100a602f03def554793bfed361837663, type: 3}
       number: 10
     enemiesSpawnedPerSecond: 1
+    cardPickWave: 0
   waveIndicator: {fileID: 1217074086}
+  arrowIndicator: {fileID: 0}
   moneyBetweenWaves: 10
 --- !u!1001 &695558092
 PrefabInstance:
