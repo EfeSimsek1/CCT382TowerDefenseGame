@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GunModuleCard
   cardName: Chain Lightning
   cardSprite: {fileID: 0}
-  cost: 50
+  cost: 80
   cardType: 1
   description: 
   image: {fileID: 21300000, guid: 9ead30d4d67cabd4f8dbaf1c9327a8d1, type: 3}
