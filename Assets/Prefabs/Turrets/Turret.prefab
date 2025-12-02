@@ -423,7 +423,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OverheatSystem
   steamEffect: {fileID: 1653475989595478928}
-  heatPerShot: 45
+  heatPerShot: 20
   coolingPerSec: 20
   heatLimit: 100
   heatBar: {fileID: 3829366806809600078}
