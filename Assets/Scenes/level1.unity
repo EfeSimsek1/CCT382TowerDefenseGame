@@ -413,7 +413,7 @@ TerrainCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_TerrainData: {fileID: 15600000, guid: d2a1b79e22d44a9418b6062483e3e4b2, type: 2}
   m_EnableTreeColliders: 1
@@ -15154,7 +15154,7 @@ TerrainCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_TerrainData: {fileID: 15600000, guid: 36272bb55240e7d4f800124b505ae8c0, type: 2}
   m_EnableTreeColliders: 1
@@ -16273,7 +16273,7 @@ Transform:
   m_GameObject: {fileID: 1852734314}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.61956, y: 0.32, z: -6.03452}
+  m_LocalPosition: {x: 6.61956, y: 0.4, z: -6.03452}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17826,7 +17826,7 @@ Transform:
   m_GameObject: {fileID: 1988150544}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 6, y: -0.5, z: -6.09}
+  m_LocalPosition: {x: 6, y: -0.18, z: -6.09}
   m_LocalScale: {x: 13.4, y: 22.08, z: 0.7885714}
   m_ConstrainProportionsScale: 0
   m_Children: []
