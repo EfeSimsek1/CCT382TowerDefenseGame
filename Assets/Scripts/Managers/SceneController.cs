@@ -6,10 +6,12 @@ using UnityEngine.UI;
 public class SceneController : MonoBehaviour
 {
     public static SceneController instance;
-    private int sceneSkipIndex = 0;
+    private int sceneSkipIndex;
 
     private void Awake()
     {
+        sceneSkipIndex = 0;
+
         if (instance == null)
         {
             instance = this;
@@ -20,15 +22,16 @@ public class SceneController : MonoBehaviour
             Destroy(gameObject);
         }
 
+        
         TMP_Dropdown dropdown = FindAnyObjectByType<TMP_Dropdown>();
         if (dropdown != null)
         {
-            Debug.Log("dropdown found!");
+            Debug.Log(dropdown.gameObject.name, dropdown.gameObject);
 
             dropdown.onValueChanged.AddListener(newValue =>
             {
                 sceneSkipIndex = newValue;
-                Debug.Log("value changed!");
+                Debug.Log($"value changed!: {newValue}");
             });
         }
 
