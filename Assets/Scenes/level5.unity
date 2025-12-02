@@ -3344,6 +3344,7 @@ RectTransform:
   - {fileID: 2124467998}
   - {fileID: 307648781}
   - {fileID: 1461397565}
+  - {fileID: 1399457665}
   - {fileID: 287113542}
   - {fileID: 108167146}
   - {fileID: 1242690337}
@@ -3410,7 +3411,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 6.5115824, z: 1}
   m_Center: {x: 0, y: -3.498694, z: 0}
@@ -4262,7 +4263,7 @@ MonoBehaviour:
   m_LayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_UseGeometry: 0
+  m_UseGeometry: 1
   m_DefaultArea: 0
   m_GenerateLinks: 0
   m_IgnoreNavMeshAgent: 1
@@ -8822,7 +8823,7 @@ TerrainCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_TerrainData: {fileID: 15600000, guid: 5ee9a8d319b68764396cc6cd54ff60c5, type: 2}
   m_EnableTreeColliders: 1
@@ -11616,6 +11617,78 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6840675201945219504, guid: 3aa5c2fcd4ffe974db70d954f44cf9f9, type: 3}
   m_PrefabInstance: {fileID: 1393353751}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1399457664
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1399457665}
+  - component: {fileID: 1399457667}
+  - component: {fileID: 1399457666}
+  m_Layer: 5
+  m_Name: ImageDeck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1399457665
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399457664}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.8218, y: 0.86763996, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 406168072}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 777, y: 278}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1399457666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399457664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.RawImage
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 2800000, guid: 97e5bbe8ef7927841bf5ae76b7784a4a, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &1399457667
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399457664}
+  m_CullTransparentMesh: 1
 --- !u!1 &1417640964
 GameObject:
   m_ObjectHideFlags: 0
@@ -12027,7 +12100,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "A level is a map where the player will go through multiple waves of enemies.
     Once the player beats all levels, they win the game.\r\n\nThe collection of cards
-    that the player keeps permanently throughout all levels. Cards can be permanently
+    that the player keeps permanently throughout all levels.\nCards can be permanently
     added or removed from the deck throughout the game.\r\n\nThe cards that are available
     for the player to play\n\n\n\n\n\r\n\n\n\n\nThe pile that the player draws cards
     from into their hand. At the start of a level, all cards from your deck are placed
@@ -15364,7 +15437,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1988150544}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -15422,8 +15495,8 @@ Transform:
   m_GameObject: {fileID: 1988150544}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 6, y: -0.5, z: -6.09}
-  m_LocalScale: {x: 13.4, y: 22.08, z: 0.7885714}
+  m_LocalPosition: {x: 6, y: 0, z: -6.09}
+  m_LocalScale: {x: 13.09933, y: 22.08, z: 0.7885714}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
