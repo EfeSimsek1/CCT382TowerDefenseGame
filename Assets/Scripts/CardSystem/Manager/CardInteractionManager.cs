@@ -1,6 +1,3 @@
-using NUnit.Framework;
-using System.Collections.Generic;
-using UnityEditor.Timeline.Actions;
 using UnityEngine;
 
 public class CardInteractionManager : MonoBehaviour
