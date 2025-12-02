@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1679033022662972095}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: StartingGunModuleRoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,7 +78,7 @@ GameObject:
   - component: {fileID: 9190649125797952750}
   - component: {fileID: 8205883432741415783}
   - component: {fileID: 5047444006373563447}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TestGunModule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
